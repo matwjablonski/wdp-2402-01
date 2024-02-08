@@ -1,14 +1,37 @@
+
+//NIE UŻYWAMY TYCH ZMIENNYCH W INNYM PLIKU
+$dark-grey: #2a2a2a;
+$white: #ffffff;
+$grey: #b6b6b6;
+$black:  rgb(42, 42, 42);
+$creamy: #e1e1e1;
+$white2: #f4f5f7;
+$black2: #292929;
+$white3: rgb(216, 216, 216);
+$white4: rgb(224, 227, 237);
+$grey2:  rgb(169, 169, 169);
+$black4: rgba(1, 2, 2, 0.2);
+$black5: #434343;
+$grey3:  #363636;
+$orange: #d58e32;
+
+
+
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+$header-topbar-bg: $black5 ;
+$header-bg: $grey3;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+$footer-claim-bg: $dark-grey;
+$footer-bg: $grey3;
 
-$primary: #d58e32;
+$primary: $orange;
 
-$text-color: #2a2a2a;
+$text-color: $dark-grey;
+
+$form-border-color: $black2;
+
+
 
 $form-border-color: #292929;
 
