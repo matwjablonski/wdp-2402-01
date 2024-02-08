@@ -16,7 +16,7 @@ const FeatureBoxes = () => (
     <div className='container'>
       <div className='row'>
         <div className='col'>
-          <a href='/shipping'>
+          <a href='#'>
             <FeatureBox icon={faTruck} active>
               <h5>Free shipping</h5>
               <p>All orders</p>
@@ -24,7 +24,7 @@ const FeatureBoxes = () => (
           </a>
         </div>
         <div className='col'>
-          <a href='/customer'>
+          <a href='#'>
             <FeatureBox icon={faHeadphones} active>
               <h5>24/7 customer</h5>
               <p>support</p>
@@ -32,7 +32,7 @@ const FeatureBoxes = () => (
           </a>
         </div>
         <div className='col'>
-          <a href='/money-back'>
+          <a href='#'>
             <FeatureBox icon={faReplyAll} active>
               <h5>Money back</h5>
               <p>guarantee</p>
@@ -40,7 +40,7 @@ const FeatureBoxes = () => (
           </a>
         </div>
         <div className='col'>
-          <a href='/discount'>
+          <a href='#'>
             <FeatureBox icon={faBullhorn} active>
               <h5>Member discount</h5>
               <p>First order</p>
