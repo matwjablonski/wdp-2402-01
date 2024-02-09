@@ -77,9 +77,11 @@
   }
 
   &:hover {
+
     .photo .buttons {
       display: flex;
     }
+
     .price {
       background-color: $primary;
     }
