@@ -16,11 +16,14 @@
       margin: 0;
       padding: 0;
       display: flex;
+      flex-wrap: wrap; /* Umożliwia zawijanie elementów w menu na małych ekranach */
+
 
       li {
         list-style: none;
         display: flex;
         align-items: stretch;
+        flex: 1; /* Rozciąganie elementów menu na całą dostępną szerokość */
       }
     }
 
@@ -49,3 +52,18 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .menu {
+    flex-direction: column; /* Menu staje się kolumnowe na mniejszych ekranach */
+  }
+
+  .menu-toggle {
+    display: flex; /* Pokazuje ikonę mobilnego menu */
+  }
+
+  ul {
+    width: 100%; /* Menu na mniejszych ekranach zajmuje pełną szerokość */
+  }
+}
+
