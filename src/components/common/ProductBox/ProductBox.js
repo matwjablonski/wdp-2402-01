@@ -19,6 +19,7 @@ const ProductBox = ({
   isFavorite, 
   isCompare, 
 }) => {
+  
   const buttonFavoriteActive = clsx('outline', { [styles.favorite]: isFavorite });
 
   const buttonCompareActive = clsx('outline', { [styles.favorite]: isCompare });
