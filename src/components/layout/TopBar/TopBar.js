@@ -9,8 +9,8 @@ import styles from './TopBar.module.scss';
 const TopBar = () => (
   <div className={styles.root}>
     <div className='container'>
-      <div className='row'>
-        <div className={`col text-left ${styles.topOptions}`}>
+      <div className={`row ${styles.topOptionsRow}`}>
+        <div className={`col-7 col-sm-6 text-left ${styles.topOptions}`}>
           <ul>
             <li>
               <a href='#'>
@@ -29,16 +29,18 @@ const TopBar = () => (
             </li>
           </ul>
         </div>
-        <div className={`col text-right ${styles.topMenu}`}>
+        <div className={`col-5 col-sm-6 text-right ${styles.topMenu}`}>
           <ul>
             <li>
               <a href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faUser} /> Login
+                <FontAwesomeIcon className={styles.icon} icon={faUser} />{' '}
+                <span className={styles.topLink}>Login</span>
               </a>
             </li>
             <li>
               <a href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faLock} /> Register
+                <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
+                <span className={styles.topLink}>Register</span>
               </a>
             </li>
             <li>
