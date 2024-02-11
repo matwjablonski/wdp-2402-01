@@ -17,7 +17,8 @@ const ProductBox = ({
   promo, 
   stars, 
   isFavorite, 
-  isCompare, 
+  isCompare,
+  image,
 }) => {
   
   const buttonFavoriteActive = clsx('outline', { [styles.favorite]: isFavorite });
@@ -26,7 +27,7 @@ const ProductBox = ({
 
   return (
     <div className={styles.root}>
-      <div className={styles.photo}>
+      <div className={styles.photo} style={{ backgroundImage: `url(${image})` }}>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -81,6 +82,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   isFavorite: PropTypes.bool,
   isCompare: PropTypes.bool,
+  image: PropTypes.string,
 };
 
 export default ProductBox;
