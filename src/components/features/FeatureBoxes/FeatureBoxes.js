@@ -22,19 +22,19 @@ const FeatureBoxes = () => (
           </FeatureBox>
         </div>
         <div className='col'>
-          <FeatureBox icon={faHeadphones} active>
+          <FeatureBox icon={faHeadphones}>
             <h5>24/7 customer</h5>
             <p>support</p>
           </FeatureBox>
         </div>
         <div className='col'>
-          <FeatureBox icon={faReplyAll} active>
+          <FeatureBox icon={faReplyAll}>
             <h5>Money back</h5>
             <p>guarantee</p>
           </FeatureBox>
         </div>
         <div className='col'>
-          <FeatureBox icon={faBullhorn} active>
+          <FeatureBox icon={faBullhorn}>
             <h5>Member discount</h5>
             <p>First order</p>
           </FeatureBox>
