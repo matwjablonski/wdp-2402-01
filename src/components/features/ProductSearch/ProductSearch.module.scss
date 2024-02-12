@@ -28,10 +28,16 @@
     select {
       -webkit-appearance: none;
       border: 0;
+      font-size: 14px;
+      outline: none;
       background-color: transparent;
       padding: 5px 30px 5px 35px;
       position: relative;
       z-index: 1;
+
+      &:hover {
+        color: $primary;
+      }
     }
   }
 
