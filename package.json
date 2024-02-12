@@ -28,6 +28,7 @@
     "src/**/*.js": [
       "npm run test-related --",
       "eslint --fix",
+      "prettier --write",
       "git add"
     ]
   },
