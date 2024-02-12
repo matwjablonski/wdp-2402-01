@@ -99,3 +99,35 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .menu {
+    a {
+      font-size: 14px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .panelBar {
+    .heading {
+      align-items: center;
+      margin: auto;
+    }
+
+    .menu {
+      margin-top: 25px;
+    }
+
+    .dots {
+      position: relative !important;
+      align-items: center;
+      margin: auto;
+
+      ul {
+        padding: 0 !important;
+        margin-right: 0.5rem !important;
+      }
+    }
+  }
+}
