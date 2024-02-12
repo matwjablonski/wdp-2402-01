@@ -61,8 +61,7 @@
     }
   }
 
-  &.active {
-    @extend %hover-animation;
+  &:hover.active {
     .iconWrapper {
       color: #ffffff;
 
