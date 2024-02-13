@@ -10,7 +10,7 @@ export const getCompare = ({ products }) =>
 
 /* action name creator */
 const createActionName = name => `app/products/${name}`;
-const CHANGE_COMPARE = createActionName('ADD_TO_COMPARE');
+const CHANGE_COMPARE = createActionName('CHANGE_COMPARE');
 
 /* action types */
 export const changeCompare = payload => ({ payload, type: CHANGE_COMPARE });
