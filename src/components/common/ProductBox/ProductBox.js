@@ -11,16 +11,7 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ 
-  name, 
-  price, 
-  promo, 
-  stars, 
-  isFavorite, 
-  isCompare,
-  image,
-}) => {
-  
+const ProductBox = ({ name, price, promo, stars, isFavorite, isCompare, image }) => {
   const buttonFavoriteActive = clsx('outline', { [styles.favorite]: isFavorite });
 
   const buttonCompareActive = clsx('outline', { [styles.favorite]: isCompare });
@@ -53,14 +44,10 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button 
-            variant='outline' 
-            className={buttonFavoriteActive}>
+          <Button variant='outline' className={buttonFavoriteActive}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button 
-            variant='outline' 
-            className={buttonCompareActive}>
+          <Button variant='outline' className={buttonCompareActive}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -71,43 +58,8 @@ const ProductBox = ({
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-    <div className={styles.content}>
-      <h5>{name}</h5>
-      <div className={styles.stars}>
-        {[1, 2, 3, 4, 5].map(i => (
-          <a key={i} href='#'>
-            {i <= stars ? (
-              <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-            ) : (
-              <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-            )}
-          </a>
-        ))}
-      </div>
-    </div>
-    <div className={styles.line}></div>
-    <div className={styles.actions}>
-      <div className={styles.outlines}>
-        <Button variant='outline'>
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-        </Button>
-        <Button variant='outline'>
-          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-        </Button>
-      </div>
-      <div>
-        <Button noHover className={styles.price} variant='small'>
-          $ {price}
-        </Button>
-      </div>
-    </div>
-  </div>
-);
-=======
   );
 };
->>>>>>> 0e2b9ff679281df3f7496e40ca24d9eacdc3a99c
 
 ProductBox.propTypes = {
   children: PropTypes.node,
