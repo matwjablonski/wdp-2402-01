@@ -8,13 +8,20 @@ import styles from './ProductSearch.module.scss';
 
 const ProductSearch = () => (
   <form action='' className={styles.root}>
-    <div className={styles.category}>
-      <FontAwesomeIcon className={styles.icon} icon={faListUl} />
-      <select name='' id=''>
-        <option value=''>Select a category</option>
-      </select>
+    <ul className={styles.category}>
+      <li>
+        <span className='d-inline-flex align-items-center'>
+          <FontAwesomeIcon className={styles.icon} icon={faListUl} />
+          Select a category
+        </span>
+        <ul>
+          <li>Category 1</li>
+          <li>Category 2</li>
+          <li>Category 3</li>
+        </ul>
+      </li>
       <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
-    </div>
+    </ul>
     <div className={styles.searchField}>
       <input placeholder='Search products...' type='text' />
       <button>
