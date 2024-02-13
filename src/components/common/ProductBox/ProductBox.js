@@ -12,6 +12,7 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { changeCompare } from '../../../redux/productsRedux';
+
 const ProductBox = ({
   id,
   name,
