@@ -7,10 +7,39 @@
   color: $text-color;
 
   .category {
+    cursor: pointer;
     border-right: 1px solid $form-border-color;
     display: flex;
+    margin-bottom: 0;
+    padding-left: 35px;
+    padding-right: 30px;
     align-items: center;
     position: relative;
+    list-style: none;
+    z-index: 1;
+
+    li, span {
+      height: 100%;
+    }
+
+    ul {
+      position: absolute;
+      display: none;
+      padding: 0;
+      left: 0;
+      list-style-type: none;
+      width: 100%;
+
+      li {
+        text-align: center;
+        padding: 5px 10px;
+        background-color: $primary;
+      }
+    }
+
+    &:hover ul {
+      display: block;
+    }
 
     .icon:first-child {
       color: $primary;
