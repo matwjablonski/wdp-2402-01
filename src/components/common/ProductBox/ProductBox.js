@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import clsx from 'clsx';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -14,12 +14,28 @@ import { useDispatch } from 'react-redux';
 import { changeCompare } from '../../../redux/productsRedux';
 import clsx from 'clsx';
 
-const ProductBox = ({ id, name, price, promo, stars, image, isCompare }) => {
+const ProductBox = ({
+  id,
+  name,
+  price,
+  promo,
+  stars,
+  isFavorite,
+  isCompare,
+  image,
+}) => {
+
   const dispatch = useDispatch();
-  const handleAddToCompare = e => {
+
+  const buttonFavoriteActive = clsx('outline', { [styles.favorite]: isFavorite });
+
+  const buttonCompareActive = clsx('outline', { [styles.favorite]: isCompare });
+
+  const handleCompare = e => {
     e.preventDefault();
     dispatch(changeCompare(id));
-  };
+  }
+
   return (
     <div className={styles.root}>
       <div className={styles.photo} style={{ backgroundImage: `url(${image})` }}>
@@ -48,14 +64,15 @@ const ProductBox = ({ id, name, price, promo, stars, image, isCompare }) => {
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline'>
+          <Button
+            variant='outline'
+            className={buttonFavoriteActive}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
-            onClick={handleAddToCompare}
-            className={clsx(isCompare && styles.compare)}
-          >
+            onClick={handleCompare}
+            className={buttonCompareActive}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -76,6 +93,8 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  isFavorite: PropTypes.bool,
+  isCompare: PropTypes.bool,
   image: PropTypes.string,
   isCompare: PropTypes.bool,
 };
