@@ -12,8 +12,6 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { changeCompare } from '../../../redux/productsRedux';
-import clsx from 'clsx';
-
 const ProductBox = ({
   id,
   name,
@@ -24,7 +22,6 @@ const ProductBox = ({
   isCompare,
   image,
 }) => {
-
   const dispatch = useDispatch();
 
   const buttonFavoriteActive = clsx('outline', { [styles.favorite]: isFavorite });
@@ -34,7 +31,7 @@ const ProductBox = ({
   const handleCompare = e => {
     e.preventDefault();
     dispatch(changeCompare(id));
-  }
+  };
 
   return (
     <div className={styles.root}>
@@ -64,15 +61,14 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button
-            variant='outline'
-            className={buttonFavoriteActive}>
+          <Button variant='outline' className={buttonFavoriteActive}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
             onClick={handleCompare}
-            className={buttonCompareActive}>
+            className={buttonCompareActive}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -96,7 +92,6 @@ ProductBox.propTypes = {
   isFavorite: PropTypes.bool,
   isCompare: PropTypes.bool,
   image: PropTypes.string,
-  isCompare: PropTypes.bool,
 };
 
 export default ProductBox;
