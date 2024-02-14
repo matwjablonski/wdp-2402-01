@@ -20,7 +20,7 @@ const CompareStickyBar = () => {
       <div className='container'>
         <div className={styles.panelBar}>
           <div className={styles.heading}>
-            <h3>Compare products</h3>
+            <h4>Compare</h4>
           </div>
         </div>
         <div className='row '>
