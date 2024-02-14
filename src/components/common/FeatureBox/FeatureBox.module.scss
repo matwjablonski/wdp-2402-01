@@ -61,17 +61,19 @@
     }
   }
 
-  &.active {
+  &:hover.active {
     .iconWrapper {
       color: #ffffff;
 
       &::after {
+        @extend %hover-animation;
         background-color: $primary;
         border-color: $primary;
       }
     }
 
     .content {
+      @extend %hover-animation;
       color: $primary;
     }
   }
