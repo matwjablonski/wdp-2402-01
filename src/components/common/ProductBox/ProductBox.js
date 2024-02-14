@@ -24,7 +24,6 @@ const ProductBox = ({
   image,
 }) => {
   const dispatch = useDispatch();
-
   const buttonFavoriteActive = clsx('outline', { [styles.favorite]: isFavorite });
 
   const buttonCompareActive = clsx('outline', { [styles.favorite]: isCompare });
@@ -67,14 +66,14 @@ const ProductBox = ({
           </Button>
           <Button
             variant='outline'
-            onClick={handleCompare}
             className={buttonCompareActive}
+            onClick={handleCompare}
           >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
-        <div className={styles.price}>
-          <Button noHover variant='small'>
+        <div>
+          <Button noHover className={styles.price} variant='small'>
             $ {price}
           </Button>
         </div>
