@@ -29,7 +29,11 @@
     }
 
     .buttons {
-      display: flex;
+      display: none;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
       justify-content: space-between;
     }
   }
@@ -59,6 +63,7 @@
     position: relative;
 
     &::before {
+      @extend %hover-animation;
       content: "";
       position: absolute;
       bottom: -1px;
@@ -75,4 +80,19 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  &:hover {
+
+    .photo .buttons {
+      display: flex;
+    }
+
+    .price {
+      background-color: $primary;
+    }
+  }
+}
+
+.favorite {
+  background-color: $primary;
 }
