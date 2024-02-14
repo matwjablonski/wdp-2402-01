@@ -299,6 +299,7 @@ const initialState = {
   cart: {
     products: [],
   },
+  rwdMode: 'desktop',
 };
 
 export default initialState;
