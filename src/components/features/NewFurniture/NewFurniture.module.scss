@@ -1,6 +1,10 @@
 @import "../../../styles/settings.scss";
 
 .root {
+  transition: opacity 0.3s ease-in-out;
+  &.fade {
+    opacity: 0.5;
+  }
   .panelBar {
     margin-bottom: 30px;
     position: relative;
