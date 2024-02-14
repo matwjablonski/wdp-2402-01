@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NewFurniture from './NewFurniture';
+import { NewFurniture } from './NewFurniture';
 
 describe('Component NewFurniture', () => {
   it('should render without crashing', () => {

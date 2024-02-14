@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -8,25 +8,24 @@ import { setRwdMode } from '../../../redux/rwdModeRedux';
 
 const MainLayout = ({ children }) => {
   const dispatch = useDispatch();
-
+  const handleResize = useCallback(() => {
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 576) {
+      dispatch(setRwdMode('mobile'));
+    } else if (windowWidth < 992) {
+      dispatch(setRwdMode('tablet'));
+    } else {
+      dispatch(setRwdMode('desktop'));
+    }
+  }, [dispatch]);
   useEffect(() => {
-    const handleResize = () => {
-      const windowWidth = window.innerWidth;
-      if (windowWidth < 576) {
-        dispatch(setRwdMode('mobile'));
-      } else if (windowWidth < 992) {
-        dispatch(setRwdMode('tablet'));
-      } else {
-        dispatch(setRwdMode('desktop'));
-      }
-    };
-
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [dispatch]);
+  }, [dispatch, handleResize]);
 
   return (
     <div>

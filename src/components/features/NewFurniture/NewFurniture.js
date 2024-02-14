@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
-class NewFurniture extends React.Component {
+export class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
@@ -19,11 +20,14 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, rwdMode } = this.props;
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    let productsPerPage = 8;
+    if (rwdMode === 'tablet') productsPerPage = 6;
+    if (rwdMode === 'mobile') productsPerPage = 4;
+    const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -67,17 +71,21 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
+            {categoryProducts
+              .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
+              .map(item => (
+                <div key={item.id} className='col-3'>
+                  <ProductBox {...item} />
+                </div>
+              ))}
           </div>
         </div>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({ rwdMode: state.rwdMode });
 
 NewFurniture.propTypes = {
   children: PropTypes.node,
@@ -98,6 +106,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  rwdMode: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {
@@ -105,4 +114,4 @@ NewFurniture.defaultProps = {
   products: [],
 };
 
-export default NewFurniture;
+export default connect(mapStateToProps)(NewFurniture);

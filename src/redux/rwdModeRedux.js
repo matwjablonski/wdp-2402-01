@@ -1,5 +1,5 @@
 // selector
-export const getRwdMode = state => state.rwdMode;
+export const getRwdMode = ({ rwdMode }) => rwdMode;
 
 // action name creator
 const reducerName = 'RWDMODE';
