@@ -105,32 +105,35 @@
 }
 
 @media screen and (max-width: 480px) {
-  .menu {
-    a {
-      font-size: 14px !important;
+  .root {
+    .panelBar .menu ul li a {
+      font-size: 14px;
     }
   }
 }
 
 @media screen and (max-width: 768px) {
-  .panelBar {
-    .heading {
-      align-items: center;
-      margin: auto;
-    }
+  .root {
+    .panelBar {
+      .heading {
+        align-items: center;
+        margin: auto;
+      }
 
-    .menu {
-      margin-top: 25px;
-    }
+      .menu {
+        margin-top: 25px;
+      }
 
-    .dots {
-      position: relative !important;
-      align-items: center;
-      margin: auto;
+      .dots {
+        position: relative;
+        align-items: center;
+        margin: auto;
+        border: 0;
 
-      ul {
-        padding: 0 !important;
-        margin-right: 0.5rem !important;
+        ul {
+          padding: 0;
+          margin-right: 0.5rem;
+        }
       }
     }
   }
