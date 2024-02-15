@@ -10,7 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeCompare } from '../../../redux/productsRedux';
 
 const ProductBox = ({
@@ -24,9 +24,16 @@ const ProductBox = ({
   image,
 }) => {
   const dispatch = useDispatch();
+  const compareLength = useSelector(
+    state => state.products.filter(item => item.isCompare).length
+  );
+
   const buttonFavoriteActive = clsx('outline', { [styles.favorite]: isFavorite });
 
-  const buttonCompareActive = clsx('outline', { [styles.favorite]: isCompare });
+  const buttonCompareActive = clsx('outline', {
+    [styles.favorite]: isCompare,
+    [styles.disabled]: compareLength >= 4 && !isCompare,
+  });
 
   const handleCompare = e => {
     e.preventDefault();
