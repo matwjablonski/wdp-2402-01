@@ -24,9 +24,9 @@ export class NewFurniture extends React.Component {
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    let productsPerPage = 8;
-    if (rwdMode === 'tablet') productsPerPage = 6;
-    if (rwdMode === 'mobile') productsPerPage = 4;
+    let productsPerPage = 4;
+    if (rwdMode === 'tablet') productsPerPage = 3;
+    if (rwdMode === 'mobile') productsPerPage = 2;
     const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
 
     const dots = [];
@@ -47,7 +47,7 @@ export class NewFurniture extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end'>
+            <div className='row no-gutters align-items-end flex-column flex-md-row'>
               <div className={'col-auto ' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
@@ -74,7 +74,7 @@ export class NewFurniture extends React.Component {
             {categoryProducts
               .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
               .map(item => (
-                <div key={item.id} className='col-3'>
+                <div key={item.id} className='col-12 col-sm-6 col-lg-4 col-xl-3'>
                   <ProductBox {...item} />
                 </div>
               ))}
