@@ -15,6 +15,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_1.jpg',
     },
     {
@@ -25,6 +27,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_2.jpg',
     },
     {
@@ -35,6 +39,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
     },
     {
@@ -45,6 +51,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: true,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_4.jpg',
     },
     {
@@ -55,6 +63,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_5.jpg',
     },
     {
@@ -65,6 +75,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: true,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_6.jpg',
     },
     {
@@ -75,6 +87,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_7.jpg',
     },
     {
@@ -85,6 +99,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_8.jpg',
     },
     {
@@ -95,6 +111,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_2.jpg',
     },
     {
@@ -105,6 +123,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_4.jpg',
     },
     {
@@ -115,6 +135,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: true,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_6.jpg',
     },
     {
@@ -125,6 +147,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: true,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_8.jpg',
     },
     {
@@ -135,6 +159,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_1.jpg',
     },
     {
@@ -145,6 +171,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
     },
     {
@@ -155,6 +183,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_5.jpg',
     },
     {
@@ -165,6 +195,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_7.jpg',
     },
     {
@@ -175,6 +207,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_1.jpg',
     },
     {
@@ -185,6 +219,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_4.jpg',
     },
     {
@@ -195,6 +231,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_6.jpg',
     },
     {
@@ -205,6 +243,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_5.jpg',
     },
     {
@@ -215,6 +255,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_8.jpg',
     },
     {
@@ -225,6 +267,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: true,
       image: process.env.PUBLIC_URL + '/images/products/bed_7.jpg',
     },
     {
@@ -235,6 +279,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_2.jpg',
     },
     {
@@ -245,6 +291,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
     },
   ],
