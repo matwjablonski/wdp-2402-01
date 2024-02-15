@@ -26,6 +26,7 @@
       }
 
       &::before {
+        @extend %hover-animation;
         content: "";
         position: absolute;
         bottom: -4px;
@@ -55,7 +56,9 @@
 
             &.active,
             &:hover {
+              @extend %hover-animation;
               &::before {
+                @extend %hover-animation;
                 content: "";
                 position: absolute;
                 bottom: -4px;
@@ -95,9 +98,45 @@
 
             &.active,
             &:hover {
+              @extend %hover-animation;
               background-color: $primary;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .root {
+    .panelBar .menu ul li a {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    .panelBar {
+      .heading {
+        align-items: center;
+        margin: auto;
+      }
+
+      .menu {
+        margin-top: 25px;
+      }
+
+      .dots {
+        position: relative;
+        align-items: center;
+        margin: auto;
+        border: 0;
+
+        ul {
+          padding: 0;
+          margin-right: 0.5rem;
         }
       }
     }
