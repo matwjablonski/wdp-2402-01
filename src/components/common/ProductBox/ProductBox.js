@@ -10,8 +10,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeCompare } from '../../../redux/productsRedux';
 
 const ProductBox = ({
+  id,
   name,
   price,
   promo,
@@ -21,9 +24,22 @@ const ProductBox = ({
   image,
   oldPrice,
 }) => {
+  const dispatch = useDispatch();
+  const compareLength = useSelector(
+    state => state.products.filter(item => item.isCompare).length
+  );
+
   const buttonFavoriteActive = clsx('outline', { [styles.favorite]: isFavorite });
 
-  const buttonCompareActive = clsx('outline', { [styles.favorite]: isCompare });
+  const buttonCompareActive = clsx('outline', {
+    [styles.favorite]: isCompare,
+    [styles.disabled]: compareLength >= 4 && !isCompare,
+  });
+
+  const handleCompare = e => {
+    e.preventDefault();
+    dispatch(changeCompare(id));
+  };
 
   return (
     <div className={styles.root}>
@@ -56,7 +72,11 @@ const ProductBox = ({
           <Button variant='outline' className={buttonFavoriteActive}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' className={buttonCompareActive}>
+          <Button
+            variant='outline'
+            className={buttonCompareActive}
+            onClick={handleCompare}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -72,6 +92,7 @@ const ProductBox = ({
 };
 
 ProductBox.propTypes = {
+  id: PropTypes.string,
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
