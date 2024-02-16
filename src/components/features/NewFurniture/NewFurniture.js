@@ -25,8 +25,9 @@ export class NewFurniture extends React.Component {
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     let productsPerPage = 4;
-    if (rwdMode === 'tablet') productsPerPage = 3;
-    if (rwdMode === 'mobile') productsPerPage = 2;
+    if (rwdMode === 'desktop') productsPerPage = 3;
+    if (rwdMode === 'tablet') productsPerPage = 2;
+    if (rwdMode === 'mobile') productsPerPage = 1;
     const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
 
     const dots = [];

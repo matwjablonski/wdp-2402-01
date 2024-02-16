@@ -14,8 +14,10 @@ const MainLayout = ({ children }) => {
       dispatch(setRwdMode('mobile'));
     } else if (windowWidth < 992) {
       dispatch(setRwdMode('tablet'));
-    } else {
+    } else if (windowWidth < 1200) {
       dispatch(setRwdMode('desktop'));
+    } else {
+      dispatch(setRwdMode('wideScreen'));
     }
   }, [dispatch]);
   useEffect(() => {
