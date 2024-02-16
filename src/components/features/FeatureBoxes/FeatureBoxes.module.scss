@@ -2,4 +2,25 @@
 
 .root {
   padding: 5rem 0;
+
+  .container {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; // Rozmieszczenie elementów wzdłuż osi X (poziomo)
+
+      .col {
+        flex: 0 0 calc(50% - 15px); // Ustawienie szerokości kolumny na 50% z uwzględnieniem marginesów
+        margin-bottom: 30px; // Dodatkowy margines na dole
+
+        @media screen and (max-width: 768px) {
+          flex: 0 0 calc(50% - 15px); // Ustawienie szerokości kolumny na 50% na ekranach o szerokości do 768px
+        }
+
+        @media screen and (max-width: 576px) {
+          flex: 0 0 calc(100% - 15px); // Ustawienie szerokości kolumny na 100% na ekranach o szerokości do 576px (pełna szerokość)
+        }
+      }
+    }
+  }
 }
