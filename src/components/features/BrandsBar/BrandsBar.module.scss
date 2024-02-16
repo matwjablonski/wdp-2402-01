@@ -15,12 +15,14 @@
     margin: 22px 8px;
     height: 92px;
     width: 143px;
+    border: 1px solid #cccccc;
 
     img {
       width: auto;
       height: 100%;
       object-fit: cover;
       overflow: hidden;
+      padding: 4px;
     }
   }
 
