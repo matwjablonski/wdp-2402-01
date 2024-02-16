@@ -9,14 +9,21 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    isAnimating: false,
   };
 
   handlePageChange = newPage => {
-    this.setState({ activePage: newPage });
+    this.setState({ isAnimating: true });
+    setTimeout(() => {
+      this.setState({ activePage: newPage, isAnimating: false });
+    }, 300);
   };
 
   handleCategoryChange = newCategory => {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ isAnimating: true });
+    setTimeout(() => {
+      this.setState({ activeCategory: newCategory, activePage: 0, isAnimating: false });
+    }, 300);
   };
 
   handleSwipeLeft = () => {
@@ -43,7 +50,7 @@ class NewFurniture extends React.Component {
 
   render() {
     const { categories, products } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, isAnimating } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = this.calculatePagesCount();
@@ -63,7 +70,7 @@ class NewFurniture extends React.Component {
     }
 
     return (
-      <div className={styles.root}>
+      <div className={`${styles.root} ${isAnimating ? styles.fade : ''}`}>
         <Swipeable
           leftAction={this.handleSwipeLeft}
           rightAction={this.handleSwipeRight}
