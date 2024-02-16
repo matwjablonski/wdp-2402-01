@@ -9,19 +9,26 @@ export class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    isAnimating: false,
   };
 
-  handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
-  }
+  handlePageChange = newPage => {
+    this.setState({ isAnimating: true });
+    setTimeout(() => {
+      this.setState({ activePage: newPage, isAnimating: false });
+    }, 300);
+  };
 
-  handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
-  }
+  handleCategoryChange = newCategory => {
+    this.setState({ isAnimating: true });
+    setTimeout(() => {
+      this.setState({ activeCategory: newCategory, activePage: 0, isAnimating: false });
+    }, 300);
+  };
 
   render() {
     const { categories, products, rwdMode } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, isAnimating } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
     let productsPerPage = 4;
@@ -45,7 +52,7 @@ export class NewFurniture extends React.Component {
     }
 
     return (
-      <div className={styles.root}>
+      <div className={`${styles.root} ${isAnimating ? styles.fade : ''}`}>
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end flex-column flex-md-row'>
