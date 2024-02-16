@@ -22,6 +22,7 @@ const ProductBox = ({
   isFavorite,
   isCompare,
   image,
+  oldPrice,
 }) => {
   const dispatch = useDispatch();
   const compareLength = useSelector(
@@ -79,8 +80,9 @@ const ProductBox = ({
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
-        <div>
-          <Button noHover className={styles.price} variant='small'>
+        <div className={styles.price}>
+          {oldPrice ? <span className={styles.oldPrice}>${oldPrice}</span> : ''}
+          <Button noHover className={styles.priceBtn} variant='small'>
             $ {price}
           </Button>
         </div>
@@ -99,6 +101,7 @@ ProductBox.propTypes = {
   isFavorite: PropTypes.bool,
   isCompare: PropTypes.bool,
   image: PropTypes.string,
+  oldPrice: PropTypes.number,
 };
 
 export default ProductBox;
