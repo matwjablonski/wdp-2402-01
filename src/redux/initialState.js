@@ -41,7 +41,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: false,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
     },
     {
@@ -53,7 +53,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: true,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_4.jpg',
       oldPrice: 35,
     },
@@ -79,7 +79,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: true,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_6.jpg',
     },
     {
@@ -91,7 +91,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: false,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_7.jpg',
       oldPrice: 35,
     },
@@ -128,7 +128,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: false,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_4.jpg',
     },
     {
@@ -140,7 +140,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: true,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_6.jpg',
     },
     {
@@ -152,7 +152,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: true,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_8.jpg',
     },
     {
@@ -164,7 +164,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: false,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_1.jpg',
     },
     {
@@ -176,7 +176,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: false,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
     },
     {
@@ -213,7 +213,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: false,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_1.jpg',
     },
     {
@@ -225,7 +225,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: false,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_4.jpg',
     },
     {
@@ -237,7 +237,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: false,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_6.jpg',
     },
     {
@@ -274,7 +274,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: false,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_7.jpg',
       oldPrice: 35,
     },
