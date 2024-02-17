@@ -1,10 +1,3 @@
-/* action name */
-const createActionName = name => `app/products/${name}`;
-const TOGGLE_FAVORITE = createActionName('TOGGLE_FAVORITE');
-
-/* action creators */
-export const toggleFavorite = payload => ({ type: TOGGLE_FAVORITE, payload: payload });
-
 /* selectors */
 export const getAll = ({ products }) => products;
 
@@ -21,9 +14,12 @@ export const getCompare = ({ products }) =>
 /* action name creator */
 const createActionName = name => `app/products/${name}`;
 const CHANGE_COMPARE = createActionName('CHANGE_COMPARE');
+const createActionName1 = name => `app/products/${name}`;
+const TOGGLE_FAVORITE = createActionName1('TOGGLE_FAVORITE');
 
 /* action types */
 export const changeCompare = payload => ({ payload, type: CHANGE_COMPARE });
+export const toggleFavorite = payload => ({ type: TOGGLE_FAVORITE, payload: payload });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
