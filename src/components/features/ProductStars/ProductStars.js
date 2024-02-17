@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductStars.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,11 +11,16 @@ import { updateUserStars } from '../../../redux/productsRedux';
 const ProductStars = ({ id, stars, userStars }) => {
   const dispatch = useDispatch();
 
+  const [lastHover, setLastHover] = useState(0);
+
   let actualStars = stars;
   let styleStar = 'blackStar';
 
   if (userStars > 0) {
     actualStars = userStars;
+  }
+
+  if (userStars > 0 || lastHover > 0) {
     styleStar = 'brownStar';
   }
 
@@ -28,6 +33,16 @@ const ProductStars = ({ id, stars, userStars }) => {
     dispatch(updateUserStars(changeStars));
   };
 
+  const updateStarsVievOn = (e, i) => {
+    e.preventDefault();
+    if (lastHover !== i) setLastHover(i);
+  };
+
+  const updateStarsVievOff = (e, i, actualStars) => {
+    e.preventDefault();
+    setLastHover(0);
+  };
+
   return (
     <div className={styles[`${styleStar}`]}>
       {[1, 2, 3, 4, 5].map(i => (
@@ -36,8 +51,14 @@ const ProductStars = ({ id, stars, userStars }) => {
           onClick={e => {
             updateStars(e, i, id);
           }}
+          onMouseOver={e => {
+            updateStarsVievOn(e, i);
+          }}
+          onMouseOut={e => {
+            updateStarsVievOff(e, i, actualStars);
+          }}
         >
-          {i <= actualStars ? (
+          {i <= actualStars || i <= lastHover ? (
             <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
           ) : (
             <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
