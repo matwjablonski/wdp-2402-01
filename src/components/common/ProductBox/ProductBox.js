@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
 import { toggleFavorite } from '../../../redux/productsRedux';
 import clsx from 'clsx';
 import styles from './ProductBox.module.scss';
