@@ -12,6 +12,7 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCompare } from '../../../redux/productsRedux';
+import { updateUserStars } from '../../../redux/productsRedux';
 
 const ProductBox = ({
   id,
@@ -41,6 +42,16 @@ const ProductBox = ({
     dispatch(changeCompare(id));
   };
 
+  const updateStars = (e, userStars, id) => {
+    e.preventDefault();
+    const changeStars = {
+      id,
+      userStars,
+    };
+    dispatch(updateUserStars(changeStars));
+    console.log('updated stars', changeStars);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo} style={{ backgroundImage: `url(${image})` }}>
@@ -56,13 +67,18 @@ const ProductBox = ({
         <h5>{name}</h5>
         <div className={styles.stars}>
           {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
+            <Button
+              key={i}
+              onClick={e => {
+                updateStars(e, i, id);
+              }}
+            >
               {i <= stars ? (
                 <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
               ) : (
                 <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
               )}
-            </a>
+            </Button>
           ))}
         </div>
       </div>

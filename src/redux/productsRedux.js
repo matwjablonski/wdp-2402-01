@@ -11,9 +11,11 @@ export const getCompare = ({ products }) =>
 /* action name creator */
 const createActionName = name => `app/products/${name}`;
 const CHANGE_COMPARE = createActionName('CHANGE_COMPARE');
+const EDIT_USER_STARS = createActionName('EDIT_USER_STARS');
 
 /* action types */
 export const changeCompare = payload => ({ payload, type: CHANGE_COMPARE });
+export const updateUserStars = payload => ({ payload, type: EDIT_USER_STARS });
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -31,6 +33,11 @@ export default function reducer(statePart = [], action = {}) {
         }
         return item;
       });
+    }
+    case EDIT_USER_STARS: {
+      return statePart.map(item =>
+        item.id === action.payload.id ? { ...item, ...action.payload } : item
+      );
     }
     default:
       return statePart;
