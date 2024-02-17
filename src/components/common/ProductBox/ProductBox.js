@@ -78,7 +78,7 @@ const ProductBox = ({
           <Button
             variant='outline'
             className={`${styles.favoriteButton}
-            ${isFavorite ? styles.favoriteActive : ''}`}
+            ${isFavorite ? styles.favorite : ''}`}
             onClick={handleFavoriteClick}
           >
               <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
