@@ -14,7 +14,10 @@ describe('Component ProductBox', () => {
 
   it('should render without crashing', () => {
     const dummyDispatch = jest.fn();
+    const dummyUseSelector = jest.fn();
     useDispatchMock.mockReturnValue(dummyDispatch);
+    useSelectorMock.mockReturnValue(dummyUseSelector);
+    expect(useSelectorMock).not.toHaveBeenCalled();
     expect(dummyDispatch).not.toHaveBeenCalled();
 
     const component = shallow(<ProductBox />);

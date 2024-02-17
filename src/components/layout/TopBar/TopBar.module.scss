@@ -41,3 +41,36 @@
     }
   }
 }
+
+@media screen and (max-width: 576px) {
+  .root {
+
+    .topLink {
+      display: none;
+    }
+
+    .topMenu ul li {
+      margin-left: 8px;
+      margin-right: 0;
+    }
+
+    .topOptions ul li {
+      margin-right: 8px;
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .root {
+
+    .topMenu ul li {
+      line-height: 30px;
+    }
+
+    .topOptions ul li {
+      line-height: 30px;
+      display: block;
+    }
+  }
+}
