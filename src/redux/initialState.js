@@ -152,7 +152,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       isFavorite: false,
-      isCompare: true,
+      isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_8.jpg',
     },
     {
