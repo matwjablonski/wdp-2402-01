@@ -14,7 +14,7 @@ export const getCompare = ({ products }) =>
 /* action name creator */
 const createActionName = name => `app/products/${name}`;
 const CHANGE_COMPARE = createActionName('CHANGE_COMPARE');
-const TOGGLE_FAVORITE = createActionName1('TOGGLE_FAVORITE');
+const TOGGLE_FAVORITE = createActionName('TOGGLE_FAVORITE');
 
 /* action types */
 export const changeCompare = payload => ({ payload, type: CHANGE_COMPARE });
