@@ -69,6 +69,7 @@
         @extend %hover-animation;
         background-color: $primary;
         border-color: $primary;
+        transform: translate(-50%, -50%);
       }
     }
 
