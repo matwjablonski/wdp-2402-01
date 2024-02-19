@@ -12,7 +12,7 @@ const Homepage = () => (
   <div className={styles.root}>
     <FeatureBoxes />
     <NewFurniture />
-    <Feedback></Feedback>
+    <Feedback />
     <CompareStickyBar />
   </div>
 );

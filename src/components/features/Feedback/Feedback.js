@@ -13,7 +13,7 @@ const Feedback = () => {
   const dots = [];
   for (let i = 0; i < opinionsCount; i++) {
     dots.push(
-      <li>
+      <li key={i}>
         <a className={i === activeOpinion && styles.active}>{i}</a>
       </li>
     );
