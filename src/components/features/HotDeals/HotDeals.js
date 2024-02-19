@@ -22,7 +22,7 @@ const HotDeals = ({ name, price, stars, image, oldPrice }) => {
           </Button>
         </div>
         <div className={'text-white ' + styles.timer}>
-          <div className={styles.amount}>25 days</div>
+          <div className={styles.amount}> 25 days</div>
           <div className={styles.amount}> 10 hrs</div>
           <div className={styles.amount}> 45 mins</div>
           <div className={styles.amount}> 30 secs</div>
