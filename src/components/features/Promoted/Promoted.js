@@ -7,7 +7,11 @@ import PromotedProduct from '../PromotedProduct/PromotedProduct';
 
 const Promoted = () => {
   const [deal, setDeal] = useState(0);
-  const promotedProducts = Object.values(useSelector(allPromoted));
+  const promotedProducts = useSelector(allPromoted);
+
+  const handleDealChange = index => {
+    setDeal(index);
+  };
 
   return (
     <div className={styles.root}>
@@ -20,13 +24,18 @@ const Promoted = () => {
                 <ul>
                   {[0, 1, 2].map(i => (
                     <li key={i}>
-                      <a className={i === deal ? styles.active : ''}>view {i}</a>
+                      <a
+                        onClick={() => handleDealChange(i)}
+                        className={i === deal ? styles.active : ''}
+                      >
+                        view {i}
+                      </a>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            {promotedProducts.map(item => (
+            {Object.values(promotedProducts).map(item => (
               <div key={item.id}>
                 <HotDeals {...item} />
               </div>

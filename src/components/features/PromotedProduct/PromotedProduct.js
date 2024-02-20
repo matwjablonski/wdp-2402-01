@@ -6,8 +6,8 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const PromotedProduct = () => {
   return (
-    <div className={' ' + styles.root}>
-      <div className={'' + styles.ProInfo}>
+    <div className={styles.root}>
+      <div className={styles.ProInfo}>
         <img src={`images/products/bed_1.jpg`} alt={'bed_1'} />
         <div className={styles.infoBar}>
           <div className={styles.infoTexts}>

@@ -675,9 +675,43 @@ const initialState = {
       oldPrice: 35,
       stars: 2,
       newFurniture: true,
+      isCompare: false,
+      isFavorite: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
     },
   },
+  brands: [
+    {
+      id: 'brand-1',
+      name: 'Brand 1',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_1.jpg',
+    },
+    {
+      id: 'brand-2',
+      name: 'Brand 2',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_2.jpg',
+    },
+    {
+      id: 'brand-3',
+      name: 'Brand 3',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_3.jpg',
+    },
+    {
+      id: 'brand-4',
+      name: 'Brand 4',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_4.jpg',
+    },
+    {
+      id: 'brand-5',
+      name: 'Brand 5',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_5.jpg',
+    },
+    {
+      id: 'brand-6',
+      name: 'Brand 6',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_6.jpg',
+    },
+  ],
 };
 
 export default initialState;

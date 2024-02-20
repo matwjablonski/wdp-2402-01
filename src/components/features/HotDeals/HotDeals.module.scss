@@ -1,15 +1,15 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: #ffffff;
-  border: 1px solid #e1e1e1;
+  background-color: $white;
+  border: 1px solid $border-bar-color;
   margin-bottom: 2rem;
 
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
     background: {
-      color: #f4f5f7;
+      color: $border-bar-color;
       size: cover;
       position: center;
       repeat: no-repeat;
@@ -19,7 +19,7 @@
     cursor: pointer;
 
       .button {
-      display: none;
+        display: none;
       }
 
       .timer {
@@ -82,7 +82,7 @@
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid $footer-claim-bg;
     position: relative;
 
     &::before {
@@ -120,9 +120,9 @@
   
         span {
         font-size: 16px;
-        color: #a5a5a5;
+        color: $header-topbar-bg;
         text-decoration: line-through;
-        text-decoration-color: black;
+        text-decoration-color: $form-border-color;
         margin: auto 8px;
         text-align: center;
       }
@@ -133,5 +133,14 @@
     .priceBtn {
       background-color: $primary;
     }
+  }
+
+  .favorite {
+    background-color: $primary;
+  }
+  
+  .disabled {
+    background-color: $border-bar-color;
+    cursor: default;
   }
 }
