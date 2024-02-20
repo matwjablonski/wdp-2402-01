@@ -5,21 +5,16 @@ import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { setRwdMode } from '../../../redux/rwdModeRedux';
+import getRwdModeByWidth from '../../../utils/getRwdMode';
 
 const MainLayout = ({ children }) => {
   const dispatch = useDispatch();
   const handleResize = useCallback(() => {
     const windowWidth = window.innerWidth;
-    if (windowWidth < 576) {
-      dispatch(setRwdMode('mobile'));
-    } else if (windowWidth < 992) {
-      dispatch(setRwdMode('tablet'));
-    } else if (windowWidth < 1200) {
-      dispatch(setRwdMode('desktop'));
-    } else {
-      dispatch(setRwdMode('wideScreen'));
-    }
+    const rwdMode = getRwdModeByWidth(windowWidth);
+    dispatch(setRwdMode(rwdMode));
   }, [dispatch]);
+
   useEffect(() => {
     handleResize();
     window.addEventListener('resize', handleResize);
