@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 export class NewFurniture extends React.Component {
   state = {
@@ -26,16 +27,42 @@ export class NewFurniture extends React.Component {
     }, 300);
   };
 
+  handleSwipeLeft = () => {
+    const { activePage } = this.state;
+    const pagesCount = this.calculatePagesCount();
+    if (activePage < pagesCount - 1) {
+      this.setState({ activePage: activePage + 1 });
+    }
+  };
+
+  handleSwipeRight = () => {
+    const { activePage } = this.state;
+    if (activePage > 0) {
+      this.setState({ activePage: activePage - 1 });
+    }
+  };
+
+  caluclateProductsPerPage = () => {
+    const { rwdMode } = this.props;
+    if (rwdMode === 'wideScreen') return 4;
+    if (rwdMode === 'desktop') return 3;
+    if (rwdMode === 'tablet') return 2;
+    if (rwdMode === 'mobile') return 1;
+  };
+
+  calculatePagesCount = () => {
+    const { products } = this.props;
+    const { activeCategory } = this.state;
+    const categoryProducts = products.filter(item => item.category === activeCategory);
+    return Math.ceil(categoryProducts.length / this.caluclateProductsPerPage());
+  };
+
   render() {
-    const { categories, products, rwdMode } = this.props;
+    const { categories, products } = this.props;
     const { activeCategory, activePage, isAnimating } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    let productsPerPage = 4;
-    if (rwdMode === 'desktop') productsPerPage = 3;
-    if (rwdMode === 'tablet') productsPerPage = 2;
-    if (rwdMode === 'mobile') productsPerPage = 1;
-    const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
+    const pagesCount = this.calculatePagesCount();
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -53,41 +80,49 @@ export class NewFurniture extends React.Component {
 
     return (
       <div className={`${styles.root} ${isAnimating ? styles.fade : ''}`}>
-        <div className='container'>
-          <div className={styles.panelBar}>
-            <div className='row no-gutters align-items-end flex-column flex-md-row'>
-              <div className={'col-auto ' + styles.heading}>
-                <h3>New furniture</h3>
-              </div>
-              <div className={'col ' + styles.menu}>
-                <ul>
-                  {categories.map(item => (
-                    <li key={item.id}>
-                      <a
-                        className={item.id === activeCategory && styles.active}
-                        onClick={() => this.handleCategoryChange(item.id)}
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={'col-auto ' + styles.dots}>
-                <ul>{dots}</ul>
+        <Swipeable
+          leftAction={this.handleSwipeLeft}
+          rightAction={this.handleSwipeRight}
+        >
+          <div className='container'>
+            <div className={styles.panelBar}>
+              <div className='row no-gutters align-items-end flex-column flex-md-row'>
+                <div className={'col-auto ' + styles.heading}>
+                  <h3>New furniture</h3>
+                </div>
+                <div className={'col ' + styles.menu}>
+                  <ul>
+                    {categories.map(item => (
+                      <li key={item.id}>
+                        <a
+                          className={item.id === activeCategory && styles.active}
+                          onClick={() => this.handleCategoryChange(item.id)}
+                        >
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={'col-auto ' + styles.dots}>
+                  <ul>{dots}</ul>
+                </div>
               </div>
             </div>
+            <div className='row'>
+              {categoryProducts
+                .slice(
+                  activePage * this.caluclateProductsPerPage(),
+                  (activePage + 1) * this.caluclateProductsPerPage()
+                )
+                .map(item => (
+                  <div key={item.id} className='col-12 col-sm-6 col-lg-4 col-xl-3'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
+            </div>
           </div>
-          <div className='row'>
-            {categoryProducts
-              .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
-              .map(item => (
-                <div key={item.id} className='col-12 col-sm-6 col-lg-4 col-xl-3'>
-                  <ProductBox {...item} />
-                </div>
-              ))}
-          </div>
-        </div>
+        </Swipeable>
       </div>
     );
   }
