@@ -671,10 +671,43 @@ const initialState = {
     {
       id: 'opinion-1',
       name: 'John Black',
-      function: 'furniture client',
+      position: 'furniture client',
       content:
         'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
       image: process.env.PUBLIC_URL + '/images/opinions/john.jpg',
+    },
+  ],
+
+  brands: [
+    {
+      id: 'brand-1',
+      name: 'Brand 1',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_1.jpg',
+    },
+    {
+      id: 'brand-2',
+      name: 'Brand 2',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_2.jpg',
+    },
+    {
+      id: 'brand-3',
+      name: 'Brand 3',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_3.jpg',
+    },
+    {
+      id: 'brand-4',
+      name: 'Brand 4',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_4.jpg',
+    },
+    {
+      id: 'brand-5',
+      name: 'Brand 5',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_5.jpg',
+    },
+    {
+      id: 'brand-6',
+      name: 'Brand 6',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_6.jpg',
     },
   ],
 };

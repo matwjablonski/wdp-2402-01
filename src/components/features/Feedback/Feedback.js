@@ -52,7 +52,7 @@ const Feedback = () => {
               <div className={styles.imgDescription}>
                 <span className={styles.bold}>{opinion.name}</span>
                 <br />
-                {opinion.function}
+                {opinion.position}
               </div>
             </div>
           </div>
