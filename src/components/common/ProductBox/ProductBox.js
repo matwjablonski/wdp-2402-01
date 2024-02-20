@@ -52,7 +52,7 @@ const ProductBox = ({
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
-        <ProductStars stars={stars} userStars={userStars} id={id}></ProductStars>
+        <ProductStars stars={stars} userStars={userStars} id={id} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
