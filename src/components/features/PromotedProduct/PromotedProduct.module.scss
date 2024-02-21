@@ -29,14 +29,15 @@
         justify-content: center;
         align-items: center;
         text-transform: uppercase;
-        color: #ffffff;
+        color: $white;
 
         .mainTitle {
           font-size: 36px;
           margin: 0;
         }
+
         .subtitle {
-          color: #ffffffcc;
+          color: $white;
           margin: 0;
         }
       }
@@ -58,12 +59,12 @@
         }
 
         &:hover a {
-          color: #ffffff;
+          color: $white;
           text-decoration: none;
         }
 
         &:hover {
-          background-color: #2a2a2a;
+          background-color: $footer-claim-bg;
           cursor: pointer;
         }
       }

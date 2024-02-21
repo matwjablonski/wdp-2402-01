@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Promoted.module.scss';
 import { useSelector } from 'react-redux';
-import { allPromoted } from '../../../redux/productsRedux';
+import { allPromoted } from '../../../redux/promotedRedux';
 import HotDeals from '../HotDeals/HotDeals';
 import PromotedProduct from '../PromotedProduct/PromotedProduct';
 

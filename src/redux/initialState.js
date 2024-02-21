@@ -666,8 +666,8 @@ const initialState = {
   cart: {
     products: [],
   },
-  promoted: {
-    first: {
+  promoted: [
+    {
       id: 'aenean-ru-bristique-3',
       name: 'Aenean Ru Bristique 3',
       category: 'bed',
@@ -679,7 +679,7 @@ const initialState = {
       isFavorite: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
     },
-  },
+  ],
   brands: [
     {
       id: 'brand-1',
