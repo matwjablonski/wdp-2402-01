@@ -6,11 +6,17 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import Swipeable from '../../common/Swipeable/Swipeable';
 
 const BrandsBar = () => {
-  const brands = useSelector(state => state.brands);
   const [activePage, setActivePage] = useState(0);
-  const brandsPerPage = 6;
 
+  const brands = useSelector(state => state.brands);
+
+  const brandsPerPage = 6;
   const pagesCount = Math.ceil(brands.length / brandsPerPage);
+
+  const brandsToRender = brands.slice(
+    activePage * brandsPerPage,
+    (activePage + 1) * brandsPerPage
+  );
 
   const handleRight = () => {
     if (activePage < pagesCount - 1) setActivePage(activePage + 1);
@@ -31,13 +37,11 @@ const BrandsBar = () => {
               <div className={styles.leftArrow} onClick={handleLeft}>
                 <FontAwesomeIcon icon={faChevronLeft} />
               </div>
-              {brands
-                .slice(activePage * brandsPerPage, (activePage + 1) * brandsPerPage)
-                .map(brand => (
-                  <div key={brand.id} className={styles.brand}>
-                    <img src={brand.image} alt={brand.name} draggable='false' />
-                  </div>
-                ))}
+              {brandsToRender.map(brand => (
+                <div key={brand.id} className={styles.brand}>
+                  <img src={brand.image} alt={brand.name} draggable='false' />
+                </div>
+              ))}
               <div className={styles.rightArrow} onClick={handleRight}>
                 <FontAwesomeIcon icon={faChevronRight} />
               </div>
