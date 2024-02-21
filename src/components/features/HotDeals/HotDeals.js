@@ -1,29 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { toggleFavorite } from '../../../redux/productsRedux';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeCompare } from '../../../redux/productsRedux';
 import clsx from 'clsx';
-import styles from './ProductBox.module.scss';
+
+import styles from './HotDeals.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faStar,
   faExchangeAlt,
   faShoppingBasket,
+  faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
-import Button from '../Button/Button';
-import { useDispatch, useSelector } from 'react-redux';
-import { changeCompare } from '../../../redux/productsRedux';
+import Button from '../../common/Button/Button';
 
-const ProductBox = ({
+const HotDeals = ({
   id,
   name,
   price,
-  promo,
   stars,
-  isFavorite,
-  isCompare,
   image,
   oldPrice,
+  isCompare,
+  isFavorite,
 }) => {
   const dispatch = useDispatch();
   const compareLength = useSelector(
@@ -37,11 +37,6 @@ const ProductBox = ({
     [styles.disabled]: compareLength >= 4 && !isCompare,
   });
 
-  const handleFavoriteClick = e => {
-    e.preventDefault();
-    dispatch(toggleFavorite(id));
-  };
-
   const handleCompare = e => {
     e.preventDefault();
     dispatch(changeCompare(id));
@@ -50,12 +45,16 @@ const ProductBox = ({
   return (
     <div className={styles.root}>
       <div className={styles.photo} style={{ backgroundImage: `url(${image})` }}>
-        {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+        <div className={styles.button}>
           <Button variant='small'>
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+            <FontAwesomeIcon icon={faShoppingBasket} /> ADD TO CART
           </Button>
+        </div>
+        <div className={'text-white ' + styles.timer}>
+          <div className={styles.amount}> 25 days</div>
+          <div className={styles.amount}> 10 hrs</div>
+          <div className={styles.amount}> 45 mins</div>
+          <div className={styles.amount}> 30 secs</div>
         </div>
       </div>
       <div className={styles.content}>
@@ -75,11 +74,10 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button
-            variant='outline'
-            className={buttonFavoriteActive}
-            onClick={handleFavoriteClick}
-          >
+          <Button variant='outline' className={styles.button}>
+            <FontAwesomeIcon icon={faEye}>Watch</FontAwesomeIcon>
+          </Button>
+          <Button variant='outline' className={buttonFavoriteActive}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
@@ -101,17 +99,16 @@ const ProductBox = ({
   );
 };
 
-ProductBox.propTypes = {
+HotDeals.propTypes = {
   id: PropTypes.string,
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
-  promo: PropTypes.string,
   stars: PropTypes.number,
-  isFavorite: PropTypes.bool,
-  isCompare: PropTypes.bool,
   image: PropTypes.string,
   oldPrice: PropTypes.number,
+  isCompare: PropTypes.bool,
+  isFavorite: PropTypes.bool,
 };
 
-export default ProductBox;
+export default HotDeals;
