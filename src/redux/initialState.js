@@ -666,6 +666,20 @@ const initialState = {
   cart: {
     products: [],
   },
+  promoted: [
+    {
+      id: 'aenean-ru-bristique-3',
+      name: 'Aenean Ru Bristique 3',
+      category: 'bed',
+      price: 30,
+      oldPrice: 35,
+      stars: 2,
+      newFurniture: true,
+      isCompare: false,
+      isFavorite: false,
+      image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
+    },
+  ],
   brands: [
     {
       id: 'brand-1',
