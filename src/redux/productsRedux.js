@@ -1,6 +1,7 @@
 /* selectors */
 export const getAll = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
+export const getAllgallery = ({ gallery }) => gallery;
 
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);

@@ -1,0 +1,36 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  margin: 10px 0;
+
+  .panelBar {
+    padding: 0 ;
+  }
+
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 82px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      padding: 0 4px 0 4px;
+    }
+  }
+
+  .leftArrow, .rightArrow {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 70px;
+    background-color: black;
+    color: white;
+    margin: 0 4px 0 4px;
+  }
+}
