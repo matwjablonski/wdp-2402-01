@@ -56,9 +56,6 @@
       font-weight: 600;
       margin: 0;
     }
-
-    p {
-    }
   }
 
   &:hover.active {
@@ -69,12 +66,15 @@
         @extend %hover-animation;
         background-color: $primary;
         border-color: $primary;
+        transform: translate(-50%, -50%);
       }
     }
 
     .content {
-      @extend %hover-animation;
       color: $primary;
     }
   }
+}
+a:hover {
+  text-decoration: none;
 }
