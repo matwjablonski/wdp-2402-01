@@ -29,14 +29,14 @@ const ProductBox = ({
   const compareLength = useSelector(
     state => state.products.filter(item => item.isCompare).length
   );
-  
+
   const buttonFavoriteActive = clsx('outline', { [styles.favorite]: isFavorite });
 
   const buttonCompareActive = clsx('outline', {
     [styles.favorite]: isCompare,
     [styles.disabled]: compareLength >= 4 && !isCompare,
   });
-  
+
   const handleFavoriteClick = e => {
     e.preventDefault();
     dispatch(toggleFavorite(id));
@@ -75,10 +75,12 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' className={buttonFavoriteActive}
+          <Button
+            variant='outline'
+            className={buttonFavoriteActive}
             onClick={handleFavoriteClick}
           >
-              <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'

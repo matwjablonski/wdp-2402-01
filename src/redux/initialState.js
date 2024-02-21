@@ -666,6 +666,7 @@ const initialState = {
   cart: {
     products: [],
   },
+  rwdMode: '',
   promoted: [
     {
       id: 'aenean-ru-bristique-3',
