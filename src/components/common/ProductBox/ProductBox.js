@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { toggleFavorite } from '../../../redux/productsRedux';
 import clsx from 'clsx';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -34,6 +35,11 @@ const ProductBox = ({
     [styles.disabled]: compareLength >= 4 && !isCompare,
   });
 
+  const handleFavoriteClick = e => {
+    e.preventDefault();
+    dispatch(toggleFavorite(id));
+  };
+
   const handleCompare = e => {
     e.preventDefault();
     dispatch(changeCompare(id));
@@ -57,7 +63,11 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' className={buttonFavoriteActive}>
+          <Button
+            variant='outline'
+            className={buttonFavoriteActive}
+            onClick={handleFavoriteClick}
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
