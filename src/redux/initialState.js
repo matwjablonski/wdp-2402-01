@@ -666,6 +666,17 @@ const initialState = {
   cart: {
     products: [],
   },
+  deals: [
+    {
+      img: '/images/Deals/sofa1.jpg',
+    },
+    {
+      img: '/images/Deals/sofa2.jpg',
+    },
+    {
+      img: '/images/Deals/sofa3.jpg',
+    },
+  ],
 };
 
 export default initialState;
