@@ -1,0 +1,147 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  background-color: $white;
+  border: 1px solid $border-bar-color;
+  margin-bottom: 2rem;
+
+  .photo {
+    position: relative;
+    padding: 80% 10px 0 10px;
+    background: {
+      color: $border-bar-color;
+      size: cover;
+      position: center;
+      repeat: no-repeat;
+    }
+    overflow: hidden;
+    align-items: flex-end;
+    cursor: pointer;
+
+      .button {
+        display: none;
+      }
+
+      .timer {
+        display: none;
+      }
+    }
+    
+    .photo:hover .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        bottom: 50%;
+        transform: translateY(50%);
+    }
+
+    .photo:hover .timer {
+        display: flex;
+        position: absolute;
+        justify-content: space-evenly;
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+  
+        .amount {
+          display: flex;
+          align-items: center;
+          line-height: 1.1;
+          word-spacing: 15px;
+          background-color: rgba(41, 41, 41, 0.8);
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          font-size: 20px
+        }
+    }
+
+  .content {
+    text-align: center;
+    padding: 20px;
+
+    h5 {
+      color: $text-color;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      a {
+        text-decoration: none;
+        color: rgb(42, 42, 42);
+      }
+    }
+  }
+
+  .line {
+    margin: 0 10px;
+    border-bottom: 1px solid $footer-claim-bg;
+    position: relative;
+
+    &::before {
+      @extend %hover-animation;
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 30px;
+      border-bottom: 4px solid $primary;
+      transform: translateX(-50%);
+    }
+  }
+
+  .actions {
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .outlines {
+        display: flex;
+        justify-content: space-between;
+
+        > * {
+          margin-right: 5px;
+      }
+    }
+
+    .priceBtn {
+        display: flex;
+    }
+
+    .price {
+        display: flex;
+  
+        span {
+        font-size: 16px;
+        color: $header-topbar-bg;
+        text-decoration: line-through;
+        text-decoration-color: $form-border-color;
+        margin: auto 8px;
+        text-align: center;
+      }
+    }
+  }
+
+  &:hover {
+    .priceBtn {
+      background-color: $primary;
+    }
+  }
+
+  .favorite {
+    background-color: $primary;
+  }
+  
+  .disabled {
+    background-color: $border-bar-color;
+    cursor: default;
+  }
+}
