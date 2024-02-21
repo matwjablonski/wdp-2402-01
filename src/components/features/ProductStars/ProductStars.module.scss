@@ -1,0 +1,20 @@
+@import "../../../styles/settings.scss";
+
+.blackStar {
+  a {
+    text-decoration: none;
+    color: rgb(42, 42, 42);
+  }
+
+}
+
+.brownStar {
+  a {
+    text-decoration: none;
+    color: $primary;
+  }
+}
+
+a:hover {
+  color: $primary;
+}
