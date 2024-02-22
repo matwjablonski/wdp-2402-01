@@ -1373,7 +1373,7 @@
   dependencies:
     "@floating-ui/utils" "^0.2.1"
 
-"@floating-ui/dom@^1.6.1":
+"@floating-ui/dom@^1.0.4":
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.6.3.tgz#954e46c1dd3ad48e49db9ada7218b0985cee75ef"
   integrity sha512-RnDthu3mzPlQ31Ss/BTwQ1zjzIhr3lk1gZB1OC56h/1vEtaXkESrOqL5fQVMfXpwGtRwX+YsZBdyHtJMQnkArw==
@@ -3322,7 +3322,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.3.0:
+classnames@^2.3.2:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.5.1.tgz#ba774c614be0f016da105c858e7159eae8e7687b"
   integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
@@ -9905,13 +9905,13 @@ react-test-renderer@^16.0.0-0, react-test-renderer@^16.9.0:
     react-is "^16.8.6"
     scheduler "^0.19.1"
 
-react-tooltip@^5.26.2:
-  version "5.26.2"
-  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-5.26.2.tgz#9af7fac3dcf423a3d6cc811980dc3f24016f0fe1"
-  integrity sha512-C1qHiqWYn6l5c98kL/NKFyJSw5G11vUVJkgOPcKgn306c5iL5317LxMNn5Qg1GSSM7Qvtsd6KA5MvwfgxFF7Dg==
+react-tooltip@5.1.3:
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-5.1.3.tgz#b90491b4dc3b22999b470f38d772cee8e97f5a59"
+  integrity sha512-taUR/Qk8RvQDq1pEET9kV7cHTmnAaGXg/pAOFA1GVfbEWtlTABLwVJPnDCOAFdtVBntGS1y7lS14fC+dNFX0uQ==
   dependencies:
-    "@floating-ui/dom" "^1.6.1"
-    classnames "^2.3.0"
+    "@floating-ui/dom" "^1.0.4"
+    classnames "^2.3.2"
 
 react@^16.9.0:
   version "16.14.0"
@@ -11293,6 +11293,11 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+swipeable-react@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/swipeable-react/-/swipeable-react-2.0.0.tgz#696010f052c53aeb63890be6ab4a34ad63b7d44b"
+  integrity sha512-PkIzNuEilt8M52jCSMnOZLCJKKbs0+2f1NoQ95noQaJoVTKln9qjNnGpfKDRGcaubRE7fdYeSPD+lcpk1DPnag==
 
 symbol-observable@^1.1.0:
   version "1.2.0"

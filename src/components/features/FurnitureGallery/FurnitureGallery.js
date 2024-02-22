@@ -3,6 +3,7 @@ import styles from './FurnitureGallery.module.scss';
 import GalleryBox from '../../common/GalleryBox/GalleryBox';
 import { getAllgallery } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
+import Button from '../../common/Button/Button';
 
 const FurnitureGallery = () => {
   const galleryProducts = useSelector(getAllgallery);
@@ -10,20 +11,32 @@ const FurnitureGallery = () => {
   return (
     <div className={styles.root}>
       <div className='container'>
-        <div className={styles.galleryPanel}>
-          {galleryProducts.slice(0, 1).map(item => (
-            <div key={item.id} className={styles.galleryBoxContainer}>
-              <GalleryBox {...item} />
-            </div>
-          ))}
-        </div>
-        <div className={styles.containerDiscount}>
-          <div className={styles.discount}>
-            {galleryProducts.slice(1, 2).map(products => (
-              <div key={products.id} className={styles.discountImage}>
-                <img src={products.image} alt={products.name} />
+        <div className='row flex-row align-items-start justify-content-between align-items-stretch'>
+          <div className='col-6'>
+            <GalleryBox {...galleryProducts[0]} />
+          </div>
+          <div className='col-6'>
+            <div className={styles.rootDiscount}>
+              {galleryProducts.slice(1, 2).map(products => (
+                <div key={products.id} className={styles.discount}>
+                  <img
+                    src={products.image}
+                    alt={products.name}
+                    className={styles.discountImage}
+                  />
+                </div>
+              ))}
+              <div className={styles.titleDiscount}>
+                <div className={styles.form}>
+                  FROM
+                  <p className={styles.price}>$50.80</p>
+                </div>
+                <h4 className={styles.title}>Bedroom Bed</h4>
+                <div className={styles.button}>
+                  <Button>Shop now</Button>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
