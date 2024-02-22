@@ -11,7 +11,6 @@ const Feedback = () => {
 
   const [activePage, setActivePage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-
   const opinionsCount = Math.ceil(opinions.length);
 
   const handleSwipeLeft = () => {

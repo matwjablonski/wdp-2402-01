@@ -748,6 +748,7 @@ const initialState = {
   ],
 
   rwdMode: '',
+
   promoted: [
     {
       id: 'aenean-ru-bristique-3',
@@ -762,6 +763,7 @@ const initialState = {
       image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
     },
   ],
+
   brands: [
     {
       id: 'brand-1',
