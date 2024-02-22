@@ -777,6 +777,66 @@ const initialState = {
       name: 'Brand 6',
       image: process.env.PUBLIC_URL + '/images/brands/brand_6.jpg',
     },
+    {
+      id: 'brand-7',
+      name: 'Brand 7',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_7.jpg',
+    },
+    {
+      id: 'brand-8',
+      name: 'Brand 8',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_8.jpg',
+    },
+    {
+      id: 'brand-9',
+      name: 'Brand 9',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_9.jpg',
+    },
+    {
+      id: 'brand-10',
+      name: 'Brand 10',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_10.jpg',
+    },
+    {
+      id: 'brand-11',
+      name: 'Brand 11',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_11.jpg',
+    },
+    {
+      id: 'brand-12',
+      name: 'Brand 12',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_12.jpg',
+    },
+    {
+      id: 'brand-13',
+      name: 'Brand 13',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_13.jpg',
+    },
+    {
+      id: 'brand-14',
+      name: 'Brand 14',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_14.jpg',
+    },
+    {
+      id: 'brand-15',
+      name: 'Brand 15',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_15.jpg',
+    },
+    {
+      id: 'brand-16',
+      name: 'Brand 16',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_16.jpg',
+    },
+    {
+      id: 'brand-17',
+      name: 'Brand 17',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_17.jpg',
+    },
+    {
+      id: 'brand-18',
+      name: 'Brand 18',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_18.jpg',
+    },
   ],
 };
 
