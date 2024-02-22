@@ -1,28 +1,28 @@
 import React from 'react';
-import './Deals.module.scss';
+import styles from './Deals.module.scss';
 
 const Deals = () => {
-  const deals = [
+  const dealsProd = [
     {
-      img: '/images/Deals/sofa1.jpg',
+      id: 'deal-1',
+      img: process.env.PUBLIC_URL + '/images/Deals/sofa1.jpg',
     },
     {
-      img: '/images/Deals/sofa2.jpg',
+      id: 'deal-2',
+      img: process.env.PUBLIC_URL + '/images/Deals/sofa2.jpg',
     },
     {
-      img: '/images/Deals/sofa3.jpg',
+      id: 'deal-3',
+      img: process.env.PUBLIC_URL + '/images/Deals/sofa3.jpg',
     },
   ];
 
   return (
-    <section className='deals-section'>
-      <p>Czemu nie działasz?</p>
-      {deals.map((deal, index) => (
-        <div
-          key={index}
-          className='deal-box'
-          style={{ backgroundImage: `url(${deal.img})` }}
-        ></div>
+    <section className={styles.dealbox}>
+      {dealsProd.map(deal => (
+        <div key={deal.id} className={styles.dealsection}>
+          <img src={deal.img} alt={`Deal ${deal.id}`} className={styles.dealImage} />
+        </div>
       ))}
     </section>
   );
