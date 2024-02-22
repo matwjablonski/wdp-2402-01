@@ -47,6 +47,8 @@ const Feedback = () => {
     );
   }
 
+  const opinion = opinions[activePage];
+
   return (
     <div className={`${styles.root} ${isAnimating ? styles.fade : ''}`}>
       <Swipeable leftAction={handleSwipeLeft} rightAction={handleSwipeRight}>
@@ -62,30 +64,28 @@ const Feedback = () => {
               </div>
             </div>
           </div>
-          {opinions.slice(activePage, activePage + 1).map(opinion => (
-            <div key={opinion.id} className={styles.opinionBox}>
-              <div className={styles.quote}>
-                <FontAwesomeIcon icon={faQuoteRight} />
+          <div key={opinion.id} className={styles.opinionBox}>
+            <div className={styles.quote}>
+              <FontAwesomeIcon icon={faQuoteRight} />
+            </div>
+            <p className={styles.opinionContent}>{opinion.content}</p>
+            <div
+              className={'row justify-content-center flex-row ' + styles.signatureBox}
+            >
+              <div className={styles.imgBox}>
+                <img
+                  src={opinion.image}
+                  alt={opinion.name}
+                  className={styles.imgOpinion}
+                />
               </div>
-              <p className={styles.opinionContent}>{opinion.content}</p>
-              <div
-                className={'row justify-content-center flex-row' + styles.signatureBox}
-              >
-                <div className={styles.imgBox}>
-                  <img
-                    src={opinion.image}
-                    alt={opinion.name}
-                    className={styles.imgOpinion}
-                  />
-                </div>
-                <div className={styles.imgDescription}>
-                  <span className={styles.bold}>{opinion.name}</span>
-                  <br />
-                  {opinion.position}
-                </div>
+              <div className={styles.imgDescription}>
+                <span className={styles.bold}>{opinion.name}</span>
+                <br />
+                {opinion.position}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </Swipeable>
     </div>
