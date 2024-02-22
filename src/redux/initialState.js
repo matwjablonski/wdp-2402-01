@@ -719,9 +719,10 @@ const initialState = {
   cart: {
     products: [],
   },
+
   gallery: [
     {
-      id: 'aenean-ru-bristique-24',
+      id: 'aenean-ru-bristique-241',
       name: 'Aenean Ru Bristique 24',
       price: 350.0,
       oldPrice: 450.0,
@@ -731,7 +732,7 @@ const initialState = {
       image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
     },
     {
-      id: 'aenean-ru-bristique-23',
+      id: 'aenean-ru-bristique-231',
       name: 'Aenean Ru Bristique 23',
       price: 350.0,
       oldPrice: 450.0,
@@ -741,7 +742,7 @@ const initialState = {
       image: process.env.PUBLIC_URL + '/images/products/bed_6.jpg',
     },
     {
-      id: 'aenean-ru-bristique-23',
+      id: 'aenean-ru-bristique-231',
       name: 'Aenean Ru Bristique 23',
       price: 350.0,
       oldPrice: 450.0,
@@ -751,7 +752,7 @@ const initialState = {
       image: process.env.PUBLIC_URL + '/images/products/bed_4.jpg',
     },
     {
-      id: 'aenean-ru-bristique-22',
+      id: 'aenean-ru-bristique-221',
       name: 'Aenean Ru Bristique 22',
       price: 350.0,
       oldPrice: 450.0,
@@ -761,7 +762,7 @@ const initialState = {
       image: process.env.PUBLIC_URL + '/images/products/bed_7.jpg',
     },
     {
-      id: 'aenean-ru-bristique-21',
+      id: 'aenean-ru-bristique-211',
       name: 'Aenean Ru Bristique 21',
       price: 350.0,
       oldPrice: 450.0,
@@ -771,7 +772,7 @@ const initialState = {
       image: process.env.PUBLIC_URL + '/images/products/bed_2.jpg',
     },
     {
-      id: 'aenean-ru-bristique-20',
+      id: 'aenean-ru-bristique-201',
       name: 'Aenean Ru Bristique 20',
       price: 350.0,
       oldPrice: 450.0,
@@ -779,6 +780,17 @@ const initialState = {
       isFavorite: false,
       isCompare: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_1.jpg',
+    },
+  ],
+
+  opinions: [
+    {
+      id: 'opinion-1',
+      name: 'John Black',
+      position: 'furniture client',
+      content:
+        'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
+      image: process.env.PUBLIC_URL + '/images/opinions/john.jpg',
     },
   ],
 
@@ -826,6 +838,66 @@ const initialState = {
       id: 'brand-6',
       name: 'Brand 6',
       image: process.env.PUBLIC_URL + '/images/brands/brand_6.jpg',
+    },
+    {
+      id: 'brand-7',
+      name: 'Brand 7',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_7.jpg',
+    },
+    {
+      id: 'brand-8',
+      name: 'Brand 8',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_8.jpg',
+    },
+    {
+      id: 'brand-9',
+      name: 'Brand 9',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_9.jpg',
+    },
+    {
+      id: 'brand-10',
+      name: 'Brand 10',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_10.jpg',
+    },
+    {
+      id: 'brand-11',
+      name: 'Brand 11',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_11.jpg',
+    },
+    {
+      id: 'brand-12',
+      name: 'Brand 12',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_12.jpg',
+    },
+    {
+      id: 'brand-13',
+      name: 'Brand 13',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_13.jpg',
+    },
+    {
+      id: 'brand-14',
+      name: 'Brand 14',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_14.jpg',
+    },
+    {
+      id: 'brand-15',
+      name: 'Brand 15',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_15.jpg',
+    },
+    {
+      id: 'brand-16',
+      name: 'Brand 16',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_16.jpg',
+    },
+    {
+      id: 'brand-17',
+      name: 'Brand 17',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_17.jpg',
+    },
+    {
+      id: 'brand-18',
+      name: 'Brand 18',
+      image: process.env.PUBLIC_URL + '/images/brands/brand_18.jpg',
     },
   ],
   rwdMode: '',
