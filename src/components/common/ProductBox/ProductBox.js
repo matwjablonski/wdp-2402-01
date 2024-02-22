@@ -4,15 +4,12 @@ import { toggleFavorite } from '../../../redux/productsRedux';
 import clsx from 'clsx';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCompare } from '../../../redux/productsRedux';
+import ProductStars from '../../features/ProductStars/ProductStars';
 
 const ProductBox = ({
   id,
@@ -20,6 +17,7 @@ const ProductBox = ({
   price,
   promo,
   stars,
+  userStars,
   isFavorite,
   isCompare,
   image,
@@ -29,14 +27,14 @@ const ProductBox = ({
   const compareLength = useSelector(
     state => state.products.filter(item => item.isCompare).length
   );
-  
+
   const buttonFavoriteActive = clsx('outline', { [styles.favorite]: isFavorite });
 
   const buttonCompareActive = clsx('outline', {
     [styles.favorite]: isCompare,
     [styles.disabled]: compareLength >= 4 && !isCompare,
   });
-  
+
   const handleFavoriteClick = e => {
     e.preventDefault();
     dispatch(toggleFavorite(id));
@@ -60,25 +58,17 @@ const ProductBox = ({
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-        </div>
+        <ProductStars stars={stars} userStars={userStars} id={id} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' className={buttonFavoriteActive}
+          <Button
+            variant='outline'
+            className={buttonFavoriteActive}
             onClick={handleFavoriteClick}
           >
-              <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
             variant='outline'
@@ -106,6 +96,7 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  userStars: PropTypes.number,
   isFavorite: PropTypes.bool,
   isCompare: PropTypes.bool,
   image: PropTypes.string,
