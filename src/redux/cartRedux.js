@@ -16,10 +16,22 @@ export const addProduct = payload => ({ payload, type: ADD_PRODUCT });
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case ADD_PRODUCT: {
-      return {
-        ...statePart,
-        products: [...statePart.products, action.payload],
-      };
+      const product = statePart.products.find(item => item.id === action.payload.id);
+      if (product) {
+        return {
+          ...statePart,
+          products: statePart.products.map(item =>
+            item.id === action.payload.id ? { ...item, amount: item.amount + 1 } : item
+          ),
+          summary: statePart.summary + action.payload.price,
+        };
+      } else
+        return {
+          ...statePart,
+          products: [...statePart.products, action.payload],
+          summary: statePart.summary + action.payload.price,
+          delivery: statePart.delivery ? statePart.delivery : 20,
+        };
     }
     default:
       return statePart;

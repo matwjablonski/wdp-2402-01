@@ -718,6 +718,8 @@ const initialState = {
   ],
   cart: {
     products: [],
+    summary: 0,
+    delivery: 0,
   },
 
   opinions: [

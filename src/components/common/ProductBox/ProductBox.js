@@ -10,6 +10,7 @@ import Button from '../Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCompare } from '../../../redux/productsRedux';
 import ProductStars from '../../features/ProductStars/ProductStars';
+import { addProduct } from '../../../redux/cartRedux';
 
 const ProductBox = ({
   id,
@@ -35,6 +36,17 @@ const ProductBox = ({
     [styles.disabled]: compareLength >= 4 && !isCompare,
   });
 
+  const handleAddToCart = e => {
+    e.preventDefault();
+    const data = {
+      id,
+      name,
+      price,
+      amount: 1,
+    };
+    dispatch(addProduct(data));
+  };
+
   const handleFavoriteClick = e => {
     e.preventDefault();
     dispatch(toggleFavorite(id));
@@ -51,7 +63,7 @@ const ProductBox = ({
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
-          <Button variant='small'>
+          <Button variant='small' onClick={handleAddToCart}>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
