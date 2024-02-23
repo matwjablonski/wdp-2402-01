@@ -9,8 +9,17 @@ const BrandsBar = () => {
   const [activePage, setActivePage] = useState(0);
 
   const brands = useSelector(state => state.brands);
+  const rwd = useSelector(state => state.rwdMode);
 
-  const brandsPerPage = 6;
+  const caluclateBrandsPerPage = rwdMode => {
+    if (rwdMode === 'wideScreen') return 6;
+    if (rwdMode === 'desktop') return 5;
+    if (rwdMode === 'tablet') return 4;
+    if (rwdMode === 'smallTablet') return 3;
+    if (rwdMode === 'mobile') return 2;
+  };
+
+  const brandsPerPage = caluclateBrandsPerPage(rwd);
   const pagesCount = Math.ceil(brands.length / brandsPerPage);
 
   const brandsToRender = brands.slice(
@@ -37,11 +46,13 @@ const BrandsBar = () => {
               <div className={styles.leftArrow} onClick={handleLeft}>
                 <FontAwesomeIcon icon={faChevronLeft} />
               </div>
-              {brandsToRender.map(brand => (
-                <div key={brand.id} className={styles.brand}>
-                  <img src={brand.image} alt={brand.name} draggable='false' />
-                </div>
-              ))}
+              <div className='row'>
+                {brandsToRender.map(brand => (
+                  <div key={brand.id} className={styles.brand}>
+                    <img src={brand.image} alt={brand.name} draggable='false' />
+                  </div>
+                ))}
+              </div>
               <div className={styles.rightArrow} onClick={handleRight}>
                 <FontAwesomeIcon icon={faChevronRight} />
               </div>
