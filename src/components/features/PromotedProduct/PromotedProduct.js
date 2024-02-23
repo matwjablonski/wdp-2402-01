@@ -14,7 +14,8 @@ const PromotedProduct = () => {
     'images/products/bed_3.jpg',
   ];
 
-  const scrollLeft = () => {
+  const scrollLeft = e => {
+    e.preventDefault();
     if (currentImageIndex > 0) {
       setIsAnimating(true);
       setTimeout(() => {
@@ -24,7 +25,8 @@ const PromotedProduct = () => {
     }
   };
 
-  const scrollRight = () => {
+  const scrollRight = e => {
+    e.preventDefault();
     if (currentImageIndex < images.length - 1) {
       setIsAnimating(true);
       setTimeout(() => {
@@ -51,14 +53,10 @@ const PromotedProduct = () => {
         </div>
       </div>
       <div className={styles.buttons}>
-        <Button variant='small' onClick={scrollLeft} disabled={currentImageIndex === 0}>
+        <Button variant='small' onClick={scrollLeft}>
           <FontAwesomeIcon icon={faAngleLeft} />
         </Button>
-        <Button
-          variant='small'
-          onClick={scrollRight}
-          disabled={currentImageIndex === images.length - 1}
-        >
+        <Button variant='small' onClick={scrollRight}>
           <FontAwesomeIcon icon={faAngleRight} />
         </Button>
       </div>
