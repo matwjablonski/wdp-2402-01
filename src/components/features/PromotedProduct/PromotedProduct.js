@@ -16,7 +16,7 @@ const PromotedProduct = () => {
 
   const scrollLeft = e => {
     e.preventDefault();
-    if (currentImageIndex > 0) {
+    if (!isAnimating && currentImageIndex > 0) {
       setIsAnimating(true);
       setTimeout(() => {
         setCurrentImageIndex(prevIndex => prevIndex - 1);
@@ -27,7 +27,7 @@ const PromotedProduct = () => {
 
   const scrollRight = e => {
     e.preventDefault();
-    if (currentImageIndex < images.length - 1) {
+    if (!isAnimating && currentImageIndex < images.length - 1) {
       setIsAnimating(true);
       setTimeout(() => {
         setCurrentImageIndex(prevIndex => prevIndex + 1);
