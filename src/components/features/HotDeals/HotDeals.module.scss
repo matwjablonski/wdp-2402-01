@@ -144,4 +144,14 @@
     background-color: $border-bar-color;
     cursor: default;
   }
+
+  @media (max-width: 1199px) {
+    .content {
+      padding: 30px;
+    }
+    
+    .actions {
+      padding: 25px;
+    }
+  }
 }
