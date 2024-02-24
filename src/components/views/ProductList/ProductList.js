@@ -13,12 +13,15 @@ const ProductList = () => {
   const categoryProducts = useSelector(state =>
     getProductsByCategory(state, categoryId)
   );
-  if (Array.isArray(categoryProducts))
+  if (Array.isArray(categoryProducts)) {
     console.log('categoryProducts - to jest tablica', categoryProducts);
+  } else {
+    console.log('categoryProducts - to NIE JEST tablica');
+  }
 
   return (
     <div className={styles.root}>
-      <div className='container'>list {categoryId}</div>
+      <div className='container'>tu powinien być niżej zakomentowany div z listą</div>
     </div>
   );
 };
