@@ -26,13 +26,13 @@ const MenuBar = ({ children }) => (
               <a href='/shop/chair'>Chair</a>
             </li>
             <li>
-              <a href='#'>Table</a>
+              <a href='/shop/table'>Table</a>
             </li>
             <li>
-              <a href='#'>Sofa</a>
+              <a href='/shop/sofa'>Sofa</a>
             </li>
             <li>
-              <a href='#'>Bedroom</a>
+              <a href='/shop/bed'>Bedroom</a>
             </li>
             <li>
               <a href='#'>Blog</a>
