@@ -17,6 +17,9 @@ const ProductList = () => {
     getProductsByCategory(state, categoryId)
   );
 
+  const categoryProductsAmount = categoryProducts.length;
+  // console.log('categoryProductsAmount', categoryProductsAmount);
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -36,13 +39,17 @@ const ProductList = () => {
             <div className={styles.headerBar}>
               <h3>FURNITURE - {categoryId}</h3>
             </div>
-            <div className='row'>
-              {categoryProducts.map(item => (
-                <div key={item.id} className='col-12 col-sm-6 col-lg-4'>
-                  <ProductBox {...item} />
-                </div>
-              ))}
-            </div>
+            {categoryProductsAmount > 0 ? (
+              <div className='row'>
+                {categoryProducts.map(item => (
+                  <div key={item.id} className='col-12 col-sm-6 col-lg-4'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div>There is no products in this category.</div>
+            )}
           </div>
           <div className='order-1 col-12 col-md-3 order-md-2'>
             <FilterBar />
