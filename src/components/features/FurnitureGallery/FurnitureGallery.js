@@ -19,23 +19,25 @@ const FurnitureGallery = () => {
             <div className={styles.rootDiscount}>
               {galleryProducts.slice(1, 2).map(products => (
                 <div key={products.id} className={styles.discount}>
-                  <img
-                    src={products.image}
-                    alt={products.name}
-                    className={styles.discountImage}
-                  />
+                  <div className={styles.discountImageContainer}>
+                    <img
+                      src={products.image}
+                      alt={products.name}
+                      className={styles.discountImage}
+                    />
+                  </div>
+                  <div className={styles.titleDiscount}>
+                    <div className={styles.form}>
+                      FROM
+                      <p className={styles.price}>$50.80</p>
+                    </div>
+                    <h4 className={styles.title}>Bedroom Bed</h4>
+                    <div className={styles.button}>
+                      <Button>Shop now</Button>
+                    </div>
+                  </div>
                 </div>
               ))}
-              <div className={styles.titleDiscount}>
-                <div className={styles.form}>
-                  FROM
-                  <p className={styles.price}>$50.80</p>
-                </div>
-                <h4 className={styles.title}>Bedroom Bed</h4>
-                <div className={styles.button}>
-                  <Button>Shop now</Button>
-                </div>
-              </div>
             </div>
           </div>
         </div>

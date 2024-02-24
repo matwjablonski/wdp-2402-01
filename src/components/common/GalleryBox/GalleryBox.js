@@ -12,7 +12,16 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button.js';
 
-const GalleryBox = ({ id, image, price, stars, oldPrice, name }) => {
+const GalleryBox = ({
+  id,
+  image,
+  price,
+  stars,
+  oldPrice,
+  name,
+  isFavorite,
+  isCompare,
+}) => {
   return (
     <div className={styles.root}>
       <div className={'col-auto ' + styles.heading}>
@@ -89,6 +98,8 @@ GalleryBox.propTypes = {
   stars: PropTypes.number.isRequired,
   oldPrice: PropTypes.number,
   name: PropTypes.string.isRequired,
+  isFavorite: PropTypes.bool.isRequired,
+  isCompare: PropTypes.bool.isRequired,
 };
 
 export default GalleryBox;
