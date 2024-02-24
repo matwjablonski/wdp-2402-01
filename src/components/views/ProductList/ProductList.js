@@ -18,7 +18,6 @@ const ProductList = () => {
   );
 
   const categoryProductsAmount = categoryProducts.length;
-  // console.log('categoryProductsAmount', categoryProductsAmount);
 
   return (
     <div className={styles.root}>
@@ -28,7 +27,9 @@ const ProductList = () => {
             <p className={styles.mainTitle}>
               indoor <b>furniture</b>
             </p>
-            <p className={styles.subtitle}>save up to 50% of all furniture</p>
+            <p className={styles.subtitle}>
+              save up to <span className={styles.discount}>50% of</span> all furniture
+            </p>
           </div>
         </div>
       </div>

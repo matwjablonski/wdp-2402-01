@@ -6,8 +6,15 @@
   .crumbs {
     background-color: $grey;
     padding: 5px 10px;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 22px;
   }
 
+  a {
+    font-weight: 500;
+
+    &:hover {
+      color: $grey3;
+    }
+  }
 }
