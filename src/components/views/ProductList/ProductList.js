@@ -8,8 +8,19 @@ import { getAll } from '../../../redux/productsRedux';
 const ProductList = () => {
   const productsAll = useSelector(state => getAll(state));
   console.log(typeof productsAll, productsAll);
+  const arr = [{ id: 'bobby' }, { id: 'hadz' }, { id: 'com' }];
 
-  return <div className={styles.root}>sss</div>;
+  return (
+    <div className={styles.root}>
+      <div className='row'>
+        {arr.map(item => (
+          <div key={item.id} className='col-12 col-sm-6 col-lg-4'>
+            {item.id}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 // ProductList.propTypes = {};
