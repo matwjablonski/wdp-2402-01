@@ -9,8 +9,6 @@ export const getFavorite = ({ products }) => products.filter(item => item.isFavo
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
-export const allPromoted = ({ promoted }) => promoted;
-
 export const getCompare = ({ products }) =>
   products.filter(item => item.isCompare === true);
 

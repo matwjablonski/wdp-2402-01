@@ -792,6 +792,22 @@ const initialState = {
         'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
       image: process.env.PUBLIC_URL + '/images/opinions/john.jpg',
     },
+    {
+      id: 'opinion-2',
+      name: 'Ann Kowalska',
+      position: 'sofa buyer',
+      content:
+        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+      image: process.env.PUBLIC_URL + '/images/opinions/ann.jpg',
+    },
+    {
+      id: 'opinion-3',
+      name: 'Mariusz Pudzian',
+      position: 'carpenter',
+      content:
+        'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.  It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing.',
+      image: process.env.PUBLIC_URL + '/images/opinions/mariusz.jpg',
+    },
   ],
 
   promoted: [
@@ -807,7 +823,32 @@ const initialState = {
       isFavorite: false,
       image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
     },
+    {
+      id: 'aenean-ru-bristique-4',
+      name: 'Aenean Ru Bristique 4',
+      category: 'bed',
+      price: 30,
+      oldPrice: 35,
+      stars: 2,
+      newFurniture: true,
+      isCompare: false,
+      isFavorite: false,
+      image: process.env.PUBLIC_URL + '/images/products/bed_4.jpg',
+    },
+    {
+      id: 'tarsele-2',
+      name: 'Tarsele 2',
+      category: 'table',
+      price: 25,
+      oldPrice: 35,
+      stars: 5,
+      newFurniture: true,
+      isFavorite: false,
+      isCompare: false,
+      image: process.env.PUBLIC_URL + '/images/products/table_2.jpg',
+    },
   ],
+
   brands: [
     {
       id: 'brand-1',

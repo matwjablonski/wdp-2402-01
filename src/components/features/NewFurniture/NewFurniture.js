@@ -46,8 +46,8 @@ class NewFurniture extends React.Component {
     const { rwdMode } = this.props;
     if (rwdMode === 'wideScreen') return 4;
     if (rwdMode === 'desktop') return 3;
-    if (rwdMode === 'tablet') return 2;
-    if (rwdMode === 'mobile') return 1;
+    if (rwdMode === 'tablet' || rwdMode === 'smallTablet') return 2;
+    if (rwdMode === 'mobile' || rwdMode === 'smallMobile') return 1;
   };
 
   calculatePagesCount = () => {
