@@ -8,6 +8,7 @@ import styles from './ProductList.module.scss';
 
 const ProductList = () => {
   //const { categoryId } = useParams();
+  const categoryId = 'chair';
 
   /*
   const categoryProducts = useSelector(state =>
@@ -19,7 +20,7 @@ const ProductList = () => {
 
   return (
     <div className={styles.root}>
-      <div className='container'>list </div>
+      <div className='container'>list {categoryId}</div>
     </div>
   );
 };
