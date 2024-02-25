@@ -15,7 +15,10 @@ const PromotedProduct = () => {
     'images/products/bed_3.jpg',
   ];
 
-  const scrollLeft = () => {
+  const scrollLeft = event => {
+    if (event && event.preventDefault) {
+      event.preventDefault();
+    }
     if (!isAnimating && currentImageIndex > 0) {
       setIsAnimating(true);
       setTimeout(() => {
@@ -25,7 +28,10 @@ const PromotedProduct = () => {
     }
   };
 
-  const scrollRight = () => {
+  const scrollRight = event => {
+    if (event && event.preventDefault) {
+      event.preventDefault();
+    }
     if (!isAnimating && currentImageIndex < images.length - 1) {
       setIsAnimating(true);
       setTimeout(() => {
@@ -53,10 +59,10 @@ const PromotedProduct = () => {
           </div>
         </div>
         <div className={styles.buttons}>
-          <Button type='button' variant='small' onClick={scrollLeft}>
+          <Button variant='small' onClick={scrollLeft}>
             <FontAwesomeIcon icon={faAngleLeft} />
           </Button>
-          <Button type='button' variant='small' onClick={scrollRight}>
+          <Button variant='small' onClick={scrollRight}>
             <FontAwesomeIcon icon={faAngleRight} />
           </Button>
         </div>
