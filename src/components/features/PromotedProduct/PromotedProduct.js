@@ -3,6 +3,7 @@ import styles from './PromotedProduct.module.scss';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 const PromotedProduct = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -14,8 +15,10 @@ const PromotedProduct = () => {
     'images/products/bed_3.jpg',
   ];
 
-  const scrollLeft = e => {
-    e.preventDefault();
+  const scrollLeft = event => {
+    if (event && event.preventDefault) {
+      event.preventDefault();
+    }
     if (!isAnimating && currentImageIndex > 0) {
       setIsAnimating(true);
       setTimeout(() => {
@@ -25,8 +28,10 @@ const PromotedProduct = () => {
     }
   };
 
-  const scrollRight = e => {
-    e.preventDefault();
+  const scrollRight = event => {
+    if (event && event.preventDefault) {
+      event.preventDefault();
+    }
     if (!isAnimating && currentImageIndex < images.length - 1) {
       setIsAnimating(true);
       setTimeout(() => {
@@ -37,30 +42,32 @@ const PromotedProduct = () => {
   };
 
   return (
-    <div className={`${styles.root} ${isAnimating ? styles.fade : ''}`}>
-      <div className={styles.ProInfo}>
-        <img src={images[currentImageIndex]} alt={`bed_${currentImageIndex + 1}`} />
-        <div className={styles.infoBar}>
-          <div className={styles.infoTexts}>
-            <p className={styles.mainTitle}>
-              indoor <b>furniture</b>
-            </p>
-            <p className={styles.subtitle}>save up to 50% of all furniture</p>
-          </div>
-          <div className={styles.button}>
-            <Button>Shop now</Button>
+    <Swipeable leftAction={scrollLeft} rightAction={scrollRight}>
+      <div className={`${styles.root} ${isAnimating ? styles.fade : ''}`}>
+        <div className={styles.ProInfo}>
+          <img src={images[currentImageIndex]} alt={`bed_${currentImageIndex + 1}`} />
+          <div className={styles.infoBar}>
+            <div className={styles.infoTexts}>
+              <p className={styles.mainTitle}>
+                indoor <b>furniture</b>
+              </p>
+              <p className={styles.subtitle}>save up to 50% of all furniture</p>
+            </div>
+            <div className={styles.button}>
+              <Button>Shop now</Button>
+            </div>
           </div>
         </div>
+        <div className={styles.buttons}>
+          <Button variant='small' onClick={scrollLeft}>
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </Button>
+          <Button variant='small' onClick={scrollRight}>
+            <FontAwesomeIcon icon={faAngleRight} />
+          </Button>
+        </div>
       </div>
-      <div className={styles.buttons}>
-        <Button variant='small' onClick={scrollLeft}>
-          <FontAwesomeIcon icon={faAngleLeft} />
-        </Button>
-        <Button variant='small' onClick={scrollRight}>
-          <FontAwesomeIcon icon={faAngleRight} />
-        </Button>
-      </div>
-    </div>
+    </Swipeable>
   );
 };
 
