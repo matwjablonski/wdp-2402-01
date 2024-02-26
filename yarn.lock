@@ -4540,6 +4540,7 @@
     "tapable" "^1.0.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "enquire.js@^2.1.6":
   "integrity" "sha512-/KujNpO+PT63F7Hlpu4h3pE3TokKRHN26JYmQpPyjkRD/N57R7bPDNojMXdi7uveAKjYB7yQnartCxZnFWr0Xw=="
   "resolved" "https://registry.npmjs.org/enquire.js/-/enquire.js-2.1.6.tgz"
@@ -4547,6 +4548,8 @@
 
 =======
 >>>>>>> 9020fd6f996801b5ff0207073ee18cfc8ca60f75
+=======
+>>>>>>> dc549b475e310ca63b49ca2e538b9b4f6c9cde62
 "entities@^2.0.0":
   "integrity" "sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A=="
   "resolved" "https://registry.npmjs.org/entities/-/entities-2.2.0.tgz"
@@ -7347,6 +7350,7 @@
   "integrity" "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg=="
   "resolved" "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz"
   "version" "2.2.3"
+<<<<<<< HEAD
 
 =======
 "json3@^3.3.2":
@@ -7360,6 +7364,8 @@
   "version" "1.0.2"
   dependencies:
     "minimist" "^1.2.0"
+=======
+>>>>>>> dc549b475e310ca63b49ca2e538b9b4f6c9cde62
 
 "json5@^2.1.0", "json5@^2.1.2", "json5@^2.2.3":
   "integrity" "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg=="
@@ -9894,7 +9900,10 @@
 "react-dom@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.0.0-0", "react-dom@^16.9.0":
 =======
 "react-dom@^16.0.0-0", "react-dom@^16.9.0":
+<<<<<<< HEAD
 >>>>>>> 9020fd6f996801b5ff0207073ee18cfc8ca60f75
+=======
+>>>>>>> dc549b475e310ca63b49ca2e538b9b4f6c9cde62
   "integrity" "sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
   "version" "16.14.0"
@@ -10047,7 +10056,11 @@
     "react-is" "^16.8.6"
     "scheduler" "^0.19.1"
 
+<<<<<<< HEAD
 "react@^0.14 || ^15.0.0 || ^16.0.0-alpha", "react@^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.0.0-0", "react@^16.14.0", "react@^16.8.3 || ^17 || ^18", "react@^16.9.0", "react@>= 16.8.0", "react@>=15", "react@>=16.x", "react@0.13.x || 0.14.x || ^15.0.0-0 || ^16.0.0-0":
+=======
+"react@^0.14 || ^15.0.0 || ^16.0.0-alpha", "react@^16.0.0-0", "react@^16.14.0", "react@^16.8.3 || ^17 || ^18", "react@^16.9.0", "react@>=15", "react@>=16.x", "react@0.13.x || 0.14.x || ^15.0.0-0 || ^16.0.0-0":
+>>>>>>> dc549b475e310ca63b49ca2e538b9b4f6c9cde62
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   "version" "16.14.0"
@@ -11614,11 +11627,14 @@
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
 
+<<<<<<< HEAD
 "swipeable-react@^2.0.0":
   "integrity" "sha512-PkIzNuEilt8M52jCSMnOZLCJKKbs0+2f1NoQ95noQaJoVTKln9qjNnGpfKDRGcaubRE7fdYeSPD+lcpk1DPnag=="
   "resolved" "https://registry.npmjs.org/swipeable-react/-/swipeable-react-2.0.0.tgz"
   "version" "2.0.0"
 
+=======
+>>>>>>> dc549b475e310ca63b49ca2e538b9b4f6c9cde62
 "symbol-observable@^1.1.0":
   "integrity" "sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ=="
   "resolved" "https://registry.npmjs.org/symbol-observable/-/symbol-observable-1.2.0.tgz"
