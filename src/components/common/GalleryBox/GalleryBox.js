@@ -11,6 +11,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button.js';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 const GalleryBox = ({
   id,
@@ -77,9 +79,14 @@ const GalleryBox = ({
               <Button variant='outline' className={styles.button}>
                 <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
               </Button>
-              <Button variant='outline' className={styles.button}>
+              <Button
+                variant='outline'
+                className={styles.button}
+                data-tooltip-id='my-tooltip-1'
+              >
                 <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon>
               </Button>
+              <Tooltip id='my-tooltip-1' content='Add to cart' />
             </div>
           </div>
         </div>

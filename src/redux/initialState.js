@@ -742,7 +742,7 @@ const initialState = {
       image: process.env.PUBLIC_URL + '/images/products/bed_6.jpg',
     },
     {
-      id: 'aenean-ru-bristique-231',
+      id: 'aenean-ru-bristique-239',
       name: 'Aenean Ru Bristique 23',
       price: 350.0,
       oldPrice: 450.0,
