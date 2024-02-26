@@ -789,7 +789,7 @@ const initialState = {
       name: 'John Black',
       position: 'furniture client',
       content:
-        'Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
+        'Consetetur sadipscing elitr, sedd diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.',
       image: process.env.PUBLIC_URL + '/images/opinions/john.jpg',
     },
     {

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { allPromoted } from '../../../redux/promotedRedux';
 import HotDeals from '../HotDeals/HotDeals';
 import PromotedProduct from '../PromotedProduct/PromotedProduct';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 const Promoted = () => {
   const [deal, setDeal] = useState(0);
@@ -72,13 +73,28 @@ const Promoted = () => {
                 </ul>
               </div>
             </div>
-            {promotedProducts.map((item, index) => (
-              <div key={item.id} style={{ display: index === deal ? 'block' : 'none' }}>
-                <HotDeals {...item} />
-              </div>
-            ))}
+            <Swipeable
+              leftAction={() => handleDealChange((deal + 1) % 3)}
+              rightAction={() => handleDealChange((deal + 2) % 3)}
+            >
+              {promotedProducts.map((item, index) => (
+                <div
+                  key={item.id}
+                  style={{ display: index === deal ? 'block' : 'none' }}
+                >
+                  <HotDeals {...item} />
+                </div>
+              ))}
+            </Swipeable>
           </div>
-          <div className={'col-8 ' + styles.promotedProduct}>
+          <div
+            className={
+              'col-8 ' +
+              (window.innerWidth > 1000 ? 'col-md-8' : 'col-12') +
+              ' ' +
+              styles.promotedProduct
+            }
+          >
             <PromotedProduct />
           </div>
         </div>
