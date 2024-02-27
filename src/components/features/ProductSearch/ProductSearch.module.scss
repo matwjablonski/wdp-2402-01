@@ -32,8 +32,17 @@
 
       li {
         text-align: center;
+        font-size: 14px;
         padding: 5px 10px;
-        background-color: $primary;
+        background-color: $white2;
+
+        &:hover {
+          background-color: $primary;
+        }
+
+        &:last-child {
+          border-radius: 0 0 5px 5px;
+        }
       }
     }
 
@@ -52,21 +61,6 @@
       position: absolute;
       right: 10px;
       z-index: 0;
-    }
-
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      font-size: 14px;
-      outline: none;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
-      position: relative;
-      z-index: 1;
-
-      &:hover {
-        color: $primary;
-      }
     }
   }
 

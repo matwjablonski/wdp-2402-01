@@ -6,7 +6,7 @@
   &.fade {
     opacity: 0.5;
   }
-  
+
   .panelBar {
     margin-bottom: 30px;
     position: relative;
@@ -45,6 +45,7 @@
         padding: 0;
         list-style: none;
         li {
+          cursor: pointer;
           display: inline-block;
           margin: 0 0.5rem;
           font-weight: 600;
