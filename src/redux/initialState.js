@@ -718,6 +718,8 @@ const initialState = {
   ],
   cart: {
     products: [],
+    summary: 0,
+    delivery: 0,
   },
 
   opinions: [
@@ -878,6 +880,17 @@ const initialState = {
       id: 'brand-18',
       name: 'Brand 18',
       image: process.env.PUBLIC_URL + '/images/brands/brand_18.jpg',
+    },
+  ],
+  deals: [
+    {
+      img: '/images/Deals/sofa1.jpg',
+    },
+    {
+      img: '/images/Deals/sofa2.jpg',
+    },
+    {
+      img: '/images/Deals/sofa3.jpg',
     },
   ],
 };

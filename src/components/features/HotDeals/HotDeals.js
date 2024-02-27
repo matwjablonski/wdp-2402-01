@@ -14,6 +14,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
+import { addProduct } from '../../../redux/cartRedux';
 
 const HotDeals = ({
   id,
@@ -37,6 +38,17 @@ const HotDeals = ({
     [styles.disabled]: compareLength >= 4 && !isCompare,
   });
 
+  const handleAddToCart = e => {
+    e.preventDefault();
+    const data = {
+      id,
+      name,
+      price,
+      amount: 1,
+    };
+    dispatch(addProduct(data));
+  };
+
   const handleCompare = e => {
     e.preventDefault();
     dispatch(changeCompare(id));
@@ -46,7 +58,7 @@ const HotDeals = ({
     <div className={styles.root}>
       <div className={styles.photo} style={{ backgroundImage: `url(${image})` }}>
         <div className={styles.button}>
-          <Button variant='small'>
+          <Button variant='small' onClick={handleAddToCart}>
             <FontAwesomeIcon icon={faShoppingBasket} /> ADD TO CART
           </Button>
         </div>
