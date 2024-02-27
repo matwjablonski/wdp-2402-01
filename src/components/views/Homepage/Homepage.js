@@ -9,11 +9,13 @@ import Feedback from '../../features/Feedback/Feedback';
 import Promoted from '../../features/Promoted/Promoted';
 import CompareStickyBar from '../../features/CompareStickyBar/CompareStickyBar';
 import BrandsBar from '../../features/BrandsBar/BrandsBar';
+import Deals from '../Deals/Deals';
 
 const Homepage = () => (
   <div className={styles.root}>
     <Promoted />
     <FeatureBoxes />
+    <Deals />
     <NewFurniture />
     <BrandsBar />
     <Feedback />
