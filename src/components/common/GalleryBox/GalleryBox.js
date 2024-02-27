@@ -70,15 +70,30 @@ const GalleryBox = ({
           </div>
           <div className={styles.actions}>
             <div className={styles.outlines}>
-              <Button variant='outline' className={styles.button}>
+              <Button
+                variant='outline'
+                className={styles.button}
+                data-tooltip-id='my-tooltip-4'
+                >
                 <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
               </Button>
-              <Button variant='outline' className={styles.button}>
+                <Tooltip id='my-tooltip-4' content='Favorite' />
+              <Button
+                variant='outline'
+                className={styles.button}
+                data-tooltip-id='my-tooltip-3'
+                >
                 <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
               </Button>
-              <Button variant='outline' className={styles.button}>
+                <Tooltip id='my-tooltip-3' content='Compare' />
+              <Button
+                variant='outline'
+                className={styles.button}
+                data-tooltip-id='my-tooltip-2'
+                >
                 <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
               </Button>
+                <Tooltip id='my-tooltip-2' content='Watch />
               <Button
                 variant='outline'
                 className={styles.button}
