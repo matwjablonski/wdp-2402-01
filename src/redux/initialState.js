@@ -884,13 +884,16 @@ const initialState = {
   ],
   deals: [
     {
-      img: '/images/Deals/sofa1.jpg',
+      id: 'deal1',
+      img: process.env.PUBLIC_URL + '/images/Deals/sofa1.jpg',
     },
     {
-      img: '/images/Deals/sofa2.jpg',
+      id: 'deal2',
+      img: process.env.PUBLIC_URL + '/images/Deals/sofa2.jpg',
     },
     {
-      img: '/images/Deals/sofa3.jpg',
+      id: 'deal3',
+      img: process.env.PUBLIC_URL + '/images/Deals/sofa3.jpg',
     },
   ],
 };

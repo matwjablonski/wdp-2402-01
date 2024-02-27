@@ -1,30 +1,30 @@
 import React from 'react';
 import styles from './Deals.module.scss';
+import { useSelector } from 'react-redux';
 
 const Deals = () => {
-  const dealsProd = [
-    {
-      id: 'deal-1',
-      img: process.env.PUBLIC_URL + '/images/Deals/sofa1.jpg',
-    },
-    {
-      id: 'deal-2',
-      img: process.env.PUBLIC_URL + '/images/Deals/sofa2.jpg',
-    },
-    {
-      id: 'deal-3',
-      img: process.env.PUBLIC_URL + '/images/Deals/sofa3.jpg',
-    },
-  ];
+  const dealsProd = useSelector(state => state.deals);
 
   return (
-    <section className={styles.dealbox}>
-      {dealsProd.map(deal => (
-        <div key={deal.id} className={styles.dealsection}>
-          <img src={deal.img} alt={`Deal ${deal.id}`} className={styles.dealImage} />
+    <div className={styles.root}>
+      <div className='container'>
+        <div className='row flex-column flex-md-row flex-wrap mb-5'>
+          <div className={'col-12 col-md-6 mt-4'}>
+            <div className={styles.deal1}>
+              <img src={dealsProd[0].img} className={styles.dealImage} />
+            </div>
+          </div>
+          <div className={'col-12 col-md-6 mt-4'}>
+            <div className={styles.deal2}>
+              <img src={dealsProd[1].img} className={styles.dealImage} />
+            </div>
+            <div className={styles.deal3}>
+              <img src={dealsProd[2].img} className={styles.dealImage} />
+            </div>
+          </div>
         </div>
-      ))}
-    </section>
+      </div>
+    </div>
   );
 };
 
