@@ -5,6 +5,7 @@ import styles from './Homepage.module.scss';
 
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
+import FurnitureGallery from '../../features/FurnitureGallery/FurnitureGallery';
 import Feedback from '../../features/Feedback/Feedback';
 import Promoted from '../../features/Promoted/Promoted';
 import CompareStickyBar from '../../features/CompareStickyBar/CompareStickyBar';
@@ -15,6 +16,7 @@ const Homepage = () => (
     <Promoted />
     <FeatureBoxes />
     <NewFurniture />
+    <FurnitureGallery />
     <BrandsBar />
     <Feedback />
     <CompareStickyBar />

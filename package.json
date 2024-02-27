@@ -64,12 +64,14 @@
     "react-slick": "^0.30.2",
     "react-swipeable": "^7.0.1",
     "react-test-renderer": "^16.9.0",
+    "react-tooltip": "^5.26.3",
     "redux": "^4.0.4",
     "sass": "^1.54.3",
     "slick-carousel": "^1.8.1",
     "swipeable-react": "^2.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.4.0",
     "onchange": "^6.1.0",

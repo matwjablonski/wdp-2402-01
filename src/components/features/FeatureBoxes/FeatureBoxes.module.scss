@@ -2,4 +2,22 @@
 
 .root {
   padding: 5rem 0;
+
+  .gallerySection {
+    padding: 50px 0;
+  }
+
+  .galleryWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .gallerySlider {
+    width: 70%;
+    overflow: hidden;
+  }
+
+  .galleryDetails {
+    width: 25%;
+  }
 }

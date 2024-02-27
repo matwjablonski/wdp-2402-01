@@ -2,6 +2,7 @@
 export const getAll = ({ products }) => products;
 
 export const getCount = ({ products }) => products.length;
+export const getAllgallery = ({ gallery }) => gallery;
 
 export const getFavorite = ({ products }) => products.filter(item => item.isFavorite);
 

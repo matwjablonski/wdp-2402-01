@@ -720,6 +720,69 @@ const initialState = {
     products: [],
   },
 
+  gallery: [
+    {
+      id: 'aenean-ru-bristique-241',
+      name: 'Aenean Ru Bristique 24',
+      price: 350.0,
+      oldPrice: 450.0,
+      stars: 2,
+      isFavorite: false,
+      isCompare: false,
+      image: process.env.PUBLIC_URL + '/images/products/bed_3.jpg',
+    },
+    {
+      id: 'aenean-ru-bristique-231',
+      name: 'Aenean Ru Bristique 23',
+      price: 350.0,
+      oldPrice: 450.0,
+      stars: 2,
+      isFavorite: false,
+      isCompare: false,
+      image: process.env.PUBLIC_URL + '/images/products/bed_6.jpg',
+    },
+    {
+      id: 'aenean-ru-bristique-239',
+      name: 'Aenean Ru Bristique 23',
+      price: 350.0,
+      oldPrice: 450.0,
+      stars: 2,
+      isFavorite: false,
+      isCompare: false,
+      image: process.env.PUBLIC_URL + '/images/products/bed_4.jpg',
+    },
+    {
+      id: 'aenean-ru-bristique-221',
+      name: 'Aenean Ru Bristique 22',
+      price: 350.0,
+      oldPrice: 450.0,
+      stars: 2,
+      isFavorite: false,
+      isCompare: false,
+      image: process.env.PUBLIC_URL + '/images/products/bed_7.jpg',
+    },
+    {
+      id: 'aenean-ru-bristique-211',
+      name: 'Aenean Ru Bristique 21',
+      price: 350.0,
+      oldPrice: 450.0,
+      stars: 2,
+      isFavorite: false,
+      isCompare: false,
+      image: process.env.PUBLIC_URL + '/images/products/bed_2.jpg',
+    },
+    {
+      id: 'aenean-ru-bristique-201',
+      name: 'Aenean Ru Bristique 20',
+      price: 350.0,
+      oldPrice: 450.0,
+      stars: 2,
+      isFavorite: false,
+      isCompare: false,
+      image: process.env.PUBLIC_URL + '/images/products/bed_1.jpg',
+    },
+  ],
+
   opinions: [
     {
       id: 'opinion-1',
@@ -746,8 +809,6 @@ const initialState = {
       image: process.env.PUBLIC_URL + '/images/opinions/mariusz.jpg',
     },
   ],
-
-  rwdMode: '',
 
   promoted: [
     {
@@ -880,6 +941,7 @@ const initialState = {
       image: process.env.PUBLIC_URL + '/images/brands/brand_18.jpg',
     },
   ],
+  rwdMode: '',
 };
 
 export default initialState;
