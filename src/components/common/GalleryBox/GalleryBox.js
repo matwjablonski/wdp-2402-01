@@ -77,7 +77,7 @@ const GalleryBox = ({
               > 
                 <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
               </Button>
-              <Tooltip id='my-tooltip-4' content='Favorite' />
+              <Tooltip id='my-tooltip-4' content='Add to favorite' />
               <Button
                 variant='outline'
                 className={styles.button}
