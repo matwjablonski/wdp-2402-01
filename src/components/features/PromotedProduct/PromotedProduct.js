@@ -15,8 +15,10 @@ const PromotedProduct = () => {
     'images/products/bed_3.jpg',
   ];
 
-  const scrollLeft = e => {
-    e.preventDefault();
+  const scrollLeft = event => {
+    if (event && event.preventDefault) {
+      event.preventDefault();
+    }
     if (!isAnimating && currentImageIndex > 0) {
       setIsAnimating(true);
       setTimeout(() => {
@@ -26,8 +28,10 @@ const PromotedProduct = () => {
     }
   };
 
-  const scrollRight = e => {
-    e.preventDefault();
+  const scrollRight = event => {
+    if (event && event.preventDefault) {
+      event.preventDefault();
+    }
     if (!isAnimating && currentImageIndex < images.length - 1) {
       setIsAnimating(true);
       setTimeout(() => {

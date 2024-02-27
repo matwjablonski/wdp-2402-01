@@ -5,6 +5,9 @@ export const getCount = ({ products }) => products.length;
 
 export const getFavorite = ({ products }) => products.filter(item => item.isFavorite);
 
+export const getProductsByCategory = ({ products }, category) =>
+  products.filter(item => item.category === category);
+
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
