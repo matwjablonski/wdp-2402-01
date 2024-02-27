@@ -74,26 +74,26 @@ const GalleryBox = ({
                 variant='outline'
                 className={styles.button}
                 data-tooltip-id='my-tooltip-4'
-                >
+              > 
                 <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
               </Button>
-                <Tooltip id='my-tooltip-4' content='Favorite' />
+              <Tooltip id='my-tooltip-4' content='Favorite' />
               <Button
                 variant='outline'
                 className={styles.button}
                 data-tooltip-id='my-tooltip-3'
-                >
+              >
                 <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
               </Button>
-                <Tooltip id='my-tooltip-3' content='Compare' />
+              <Tooltip id='my-tooltip-3' content='Add to compare' />
               <Button
                 variant='outline'
                 className={styles.button}
                 data-tooltip-id='my-tooltip-2'
-                >
+              >
                 <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
               </Button>
-                <Tooltip id='my-tooltip-2' content='Watch />
+              <Tooltip id='my-tooltip-2' content='Add to watch' />
               <Button
                 variant='outline'
                 className={styles.button}
